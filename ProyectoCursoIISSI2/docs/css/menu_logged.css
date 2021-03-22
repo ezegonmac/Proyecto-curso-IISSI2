@@ -52,18 +52,26 @@ header {
 .menu_profile {
 	float: right;
 	width: 5%;
-	height: 100%;
+	height: 8%;
 
-	border-left: 1px solid white;
+	border-left: none;
+
+	pointer-events: none;
+	touch-action: none;
+	position: fixed;
+	right: 3px;
+	z-index: 900;
 }
 
 /* MENU_RIGHT */
 
 .menu_right {
-	width: 84%;
+	float: right;
+
+	width: 90%;
 	height: 100%;
 
-	float: right;
+	overflow: hidden;
 }
 
 .menu_right ul {
@@ -77,12 +85,20 @@ header {
 
 .menu_right ul li {
 	border-left: 1px solid white;
-	width: 15%;
+	width: 16%;
 	min-width: 100px;
 }
 
 .menu_text {
 	text-decoration: none;
 	color: white;
-	padding: 10px 20px;
+	height: 100%;
+}
+
+/* MENU_LOGIN */
+
+#profile {
+	height: 100%;
+	padding-right: 40%;
+	padding-left: 20%;
 }

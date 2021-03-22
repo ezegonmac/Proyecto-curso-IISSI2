@@ -3,46 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Feed</title>
-        <link rel="stylesheet" type="text/css" href="css/menu_style.css">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
     </head>
     <body>
-        <header>
-            <a href="feed_logged.html" class="menu_feed">
-                <img
-                class="menu_photo"
-                src="images/profile_photo.png" 
-                alt="Feed">
+        <header id="menu">
+            <a href="feed.html" class="menu_feed menu_item">
+                <img class="menu_photo"
+                     src="images/profile_photo.png"
+                     alt="Feed">
             </a>
-            <a href="profile.html" class="menu_profile">
-                <img
-                class="menu_photo"
-                src="images/profile_photo.png" 
-                alt="Profile">
+            <a href="profile.html" class="menu_profile menu_item">
+                <img class="menu_photo"
+                     src="images/profile_photo.png" 
+                     alt="Profile">
             </a>
-            <nav class="menu">
+            <nav class="menu_right">
                 <ul>
-                    <li>
+                    <li  class="menu_item" id="menu_login">
                         <a class="menu_text" 
-                           href="search.html">
-                           Search
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu_text" 
-                           href="trending.html">
-                           Trending
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu_text" 
-                           href="following.html">
-                           Following
-                        </a>
-                    </li>
-                    <li id="profile">
-                        <a class="menu_text" 
-                           href="profile.html">
-                           Username
+                           href="login.html">
+                           Login
                         </a>
                     </li>
                 </ul>

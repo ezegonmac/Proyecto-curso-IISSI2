@@ -9,15 +9,15 @@ header {
 	width: 100%;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .menu_photo {
 	width: 40%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 #menu {
@@ -84,17 +84,18 @@ header {
 .menu_right ul li {
 	border-left: 1px solid white;
 	min-width: 100px;
+	width: 20%;
 }
 
 .menu_text {
 	text-decoration: none;
 	color: white;
-	padding: 10px 20px;
+	height: 100%;
 }
 
 /* MENU_LOGIN */
 
 #menu_login {
-	padding-right: 8%;
+	padding-right: 20%;
 	padding-left: 5%;
 }
