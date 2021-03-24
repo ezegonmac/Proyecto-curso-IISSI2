@@ -3,9 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
         <link rel="stylesheet" type="text/css" href="css/login.css">
+
+        <script src="js/utils/include.js"></script>
+
+        <title>Login</title>
     </head>
     <body>
         <header>
@@ -24,9 +28,9 @@
                     
                     <form class=login-form >
                         <label for="username" >Username</label>
-                        <input id="username" class="form-input" type="text">
+                        <input id="username" class="form-input" type="text" name="username">
                         <label for="password" >Password</label>
-                        <input id="password" class="form-input" type="password">
+                        <input id="password" class="form-input" type="password" name="password">
                         <input id="submit-button" type="submit" value="Login">
                     </form>
 
@@ -42,12 +46,11 @@
             </div>
         </div>
 
-        <footer>
-            <div class="container">
-                <p>Proyecto IISSI2</p>
-                <p>Ezequiel González Macho</p>
-                <p>ezegonmac@alum.us.es</p>
-            </div>
-        </footer>
+        <div id="footer"></div>
+
+        <script>
+            include("menu.html", "#menu");
+            include("footer.html", "#footer");
+        </script>
     </body>
 </html>

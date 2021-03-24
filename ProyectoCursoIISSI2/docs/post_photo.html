@@ -2,57 +2,22 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Feed</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
-        <link rel="stylesheet" type="text/css" href="css/menu_logged.css">
+        <link rel="stylesheet" type="text/css" href="css/post-photo.css">
+
+        <script src="js/utils/include.js"></script>
+
+        <title>Post Photo</title>
     </head>
     <body>
-        <header id="menu">
-            <a href="feed_logged.html" class="menu_feed menu_item">
-                <img class="menu_photo"
-                     src="images/profile_photo.png"
-                     alt="Feed">
-            </a>
-            <a href="profile.html" class="menu_profile menu_item">
-                <img class="menu_photo"
-                     src="images/profile_photo.png" 
-                     alt="Profile">
-            </a>
-            <nav class="menu_right">
-                <ul>
-                    <li>
-                        <a class="menu_text  menu_item" 
-                           href="search.html">
-                           Search
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu_text menu_item" 
-                           href="trending.html">
-                           Trending
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu_text menu_item" 
-                           href="following.html">
-                           Following
-                        </a>
-                    </li>
-                    <li>
-                        <a id="profile"
-                           class="menu_text menu_item" 
-                           href="profile.html">
-                           Username
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
 
+        <div id="footer"></div>
 
-        
+        <script>
+            include("footer.html", "#footer");
+        </script>
+
     </body>
-    <footer>
-
-    </footer>
 </html>
