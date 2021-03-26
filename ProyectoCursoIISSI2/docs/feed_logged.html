@@ -5,6 +5,7 @@
 
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
         <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
+        <link rel="stylesheet" type="text/css" href="css/feed.css">
 
         <script src="js/utils/include.js"></script>
 
@@ -14,21 +15,17 @@
 
         <div id="menu_logged"></div>
 
-            <div id="center">
-                <div id="login">
-                    <a>Login</a>
-                </div>
-
-                <div id="singup">
-                    <a>Singup</a>
-                </div>
+        <div class="center-section">
+            <div class="card">
+                Center
             </div>
+        </div>
 
-            <div id="footer"></div>
-
-            <script>
-                include("menu_logged.html", "#menu_logged")
-                include("footer.html", "#footer");
-            </script>
+        <div id="footer"></div>
+        
+        <script>
+            include("menu_logged.html", "#menu_logged")
+            include("footer.html", "#footer");
+        </script>
     </body>
 </html>

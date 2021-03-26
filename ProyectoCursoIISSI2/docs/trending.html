@@ -6,6 +6,7 @@
 
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
         <link rel="stylesheet" type="text/css" href="css/trending.css">
+        <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
 
         <script src="js/utils/include.js"></script>
 
@@ -13,11 +14,19 @@
     </head>
     <body>
 
-        <div id="footer"></div>
+        <div id="menu_logged"></div>
 
+        <div class="center-section">
+            <div class="card">
+                Center
+            </div>
+        </div>
+
+        <div id="footer"></div>
+        
         <script>
+            include("menu_logged.html", "#menu_logged")
             include("footer.html", "#footer");
         </script>
-        
     </body>
 </html>
