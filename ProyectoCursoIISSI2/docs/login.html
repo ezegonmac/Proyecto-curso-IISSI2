@@ -12,15 +12,8 @@
         <title>Login</title>
     </head>
     <body>
-        <header>
-            <div class="container">
-                <a href="feed.html" class="menu_feed">
-                    <img class="logo"
-                         src="images/logo.png" 
-                         alt="Logo">
-                </a>
-            </div>
-        </header>
+
+        <div id="header"></div>
 
         <div class="center-section">
             <div class="card">
@@ -49,6 +42,7 @@
         <div id="footer"></div>
 
         <script>
+            include("header.html", "#header");
             include("menu.html", "#menu");
             include("footer.html", "#footer");
         </script>

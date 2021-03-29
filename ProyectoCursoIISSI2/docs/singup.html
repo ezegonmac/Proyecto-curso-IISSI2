@@ -13,9 +13,38 @@
     </head>
     <body>
 
+        <div id="header"></div>
+
+        <div class="center-section">
+            <div class="card">
+                <div class="upper-card">
+                    
+                    <form class=login-form >
+                        <label for="username" >Username</label>
+                        <input id="username" class="form-input" type="text" name="username">
+                        <label for="password" >Password</label>
+                        <input id="password" class="form-input" type="password" name="password">
+                        <label for="c-password" >Confirm Password</label>
+                        <input id="c-password" class="form-input" type="password" name="c-password">
+                        <label for="email" >Email</label>
+                        <input id="email" class="form-input" type="email" name="email">
+                    </form>
+
+                </div>
+
+                <div class="bottom-card">
+                    <label >Profile Photo</label>
+                    <input id="input-photo" class="form-input" type="file" name="photo">
+                    
+                    <input id="submit-button" type="submit" value="Singup">
+                </div>
+            </div>
+        </div>
+
         <div id="footer"></div>
 
         <script>
+            include("header.html", "#header");
             include("footer.html", "#footer");
         </script>
         
