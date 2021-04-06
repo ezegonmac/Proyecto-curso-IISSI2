@@ -1,0 +1,112 @@
+:root {
+	--background1: #1c1c33;
+	--background2: #070725;
+	--background3: #e8e8e8;
+	--background4: #e8e8e86e;
+
+	--color1: #092327;
+	--color2: #092327;
+	--color3: #ff2a6d;
+
+	--color1-dark: orange;
+	--color2-dark: orange;
+
+	--font1: "Lato", Helvetica;
+	--font2: "Lato", Helvetica;
+
+	--font1-color: white;
+	--font2-color: #020224;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* FORMS */
+
+.form-label {
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: -3px;
+
+	width: 163px;
+	height: 20px;
+
+	color: var(--font1-color);
+	font-family: var(--font1);
+	font-weight: 550;
+}
+
+.form-input {
+	font-family: var(--font1);
+
+	height: 25px;
+	width: 200px;
+
+	margin: 4px;
+	padding: 5px 8px;
+
+	border: 0px solid white;
+	border-radius: 4px;
+
+	transition: 0.02s ease;
+}
+
+.form-input:focus {
+	border: 2px solid var(--color3);
+	outline: none;
+
+	background-color: #f3f3f3;
+}
+
+.form-input:hover {
+	border: 2px solid var(--color3);
+	outline: none;
+
+	background-color: #f3f3f3;
+}
+
+#submit-button {
+	color: var(--font2-color);
+	font-family: var(--font2);
+	font-weight: bold;
+
+	margin-top: 20px;
+
+	width: 65px;
+	height: 25px;
+	align-self: center;
+
+	border-radius: 10px;
+	border: none;
+
+	transition: ease 0.25s;
+	cursor: pointer;
+}
+
+#submit-button:hover {
+	box-shadow: 0px 0px 5px black;
+	color: white;
+	background-color: var(--color3);
+
+	width: 80px;
+}
+
+#submit-button:focus {
+	box-shadow: inset 0px 0px 5px black;
+
+	border: none;
+	outline: none;
+}
+
+/* file-upload */
+
+.form-control {
+	margin-top: 10px;
+
+	font-size: 10pt;
+	font-family: var(--font2);
+	color: var(--font2-color);
+}
