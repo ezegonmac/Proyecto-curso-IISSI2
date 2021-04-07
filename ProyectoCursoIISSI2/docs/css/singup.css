@@ -1,35 +1,11 @@
-:root {
-	--background1: #1c1c33;
-	--background2: #070725;
-	--background3: #e8e8e8;
-	--background4: #e8e8e86e;
-
-	--color1: #092327;
-	--color2: #092327;
-	--color3: #ff2a6d;
-
-	--color1-dark: orange;
-	--color2-dark: orange;
-
-	--font1: "Lato", Helvetica;
-	--font2: "Lato", Helvetica;
-
-	--font1-color: white;
-	--font2-color: #020224;
-}
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* CENTER SECTION */
-
 #center-section {
 	background-color: var(--background2);
-
-	height: 100%;
 
 	display: flex;
 	justify-content: space-evenly;
@@ -47,9 +23,11 @@
 	height: 100%;
 	min-height: 350px;
 
+	margin: 50px;
+
 	display: flex;
 	justify-content: center;
-	align-items: column;
+	align-items: center;
 }
 
 .login-form {
@@ -73,6 +51,8 @@
 	min-width: 350px;
 	height: 100%;
 	min-height: 350px;
+
+	margin: 50px;
 
 	display: flex;
 	justify-content: space-evenly;

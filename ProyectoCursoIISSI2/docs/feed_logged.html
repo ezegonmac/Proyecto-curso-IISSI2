@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
-        <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
         <link rel="stylesheet" type="text/css" href="css/feed.css">
+        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+
+        <!-- BOOTSTRAP -->
+        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
+        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
+        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
+        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
+        <script src= "/js/libs/popper.min.js"> </script>
+        <script src= "/js/libs/bootstrap.min.js"> </script>
 
         <script src="js/utils/include.js"></script>
 
         <title>Feed</title>
     </head>
     <body>
+        <div id="menu-logged"></div>
 
-        <div id="menu_logged"></div>
-
-        <div class="center-section">
-            <div class="card">
-                Center
+        <div id="center-section">
+            <div id="center-card">
+                <p>center</p>
             </div>
         </div>
-
-        <div id="footer"></div>
         
+        <div id="footer"></div>
+
         <script>
-            include("menu_logged.html", "#menu_logged")
+            include("menu_logged.html", "#menu-logged");
             include("footer.html", "#footer");
         </script>
     </body>
