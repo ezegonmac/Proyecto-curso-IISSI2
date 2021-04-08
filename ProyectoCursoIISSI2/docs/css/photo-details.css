@@ -6,13 +6,15 @@
 
 #center-section {
 	background-color: var(--background4);
-
-	height: auto;
 }
 
 #center-section .row {
 	background-color: pink;
 	border: 2px solid purple;
+
+	margin: 0;
+
+	width: 100vw;
 
 	display: flex;
 	justify-content: center;
@@ -90,16 +92,20 @@
 	min-height: 200px;
 
 	margin: 50px;
+	padding: 3%;
 
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
+	align-items: flex-start;
 	flex-direction: column;
 }
 
 #bottom-card p {
 	color: var(--font1-color);
 	font-family: var(--font1);
+
+	margin: 0;
+	padding: 0;
 }
 
 /* --- top-sections --- */
@@ -130,6 +136,16 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+#comments-container {
+	background-color: red;
+
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+
+	overflow-y: scroll;
 }
 
 /* --- */

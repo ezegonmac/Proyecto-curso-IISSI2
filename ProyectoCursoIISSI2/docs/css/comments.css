@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.title {
+	align-self: center;
+}
+
+#container {
+	background-color: pink;
+	border: 2px solid purple;
+
+	height: 100%;
+
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	flex-direction: column;
+}
+
+#comments-card {
+	background-color: rgb(248, 248, 94);
+	border: 2px solid gray;
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* - comment - */
+
+.comment {
+	background-color: mediumaquamarine;
+	border: 2px solid black;
+
+	list-style: none;
+
+	margin: 15px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.comment > p {
+	background-color: thistle;
+
+	margin: 10px;
+}
+
+.profile-zone .profile-photo {
+	height: 25px;
+	width: 25px;
+
+	margin: 8px;
+}
+
+.profile-zone a {
+	background-color: tomato;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.profile-zone > a > p {
+	margin: 5px 10px;
+}
+
+.rating {
+	background-color: steelblue;
+
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

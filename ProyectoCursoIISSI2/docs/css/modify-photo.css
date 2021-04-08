@@ -14,9 +14,9 @@
 	background-color: pink;
 	border: 2px solid purple;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin: 0;
+
+	width: 100vw;
 }
 
 #center-section .col-sm {
@@ -124,7 +124,7 @@
 	border: 2px solid orange;
 
 	margin: 0;
-	height: 275px;
+	flex: 100%;
 
 	display: flex;
 	justify-content: center;
