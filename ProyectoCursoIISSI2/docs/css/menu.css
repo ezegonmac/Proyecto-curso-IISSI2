@@ -60,6 +60,8 @@
 }
 
 .menu_login p {
+	text-decoration: none;
+	margin: 0;
 	padding: 0 40px;
 	color: var(--font1-color);
 	font-weight: bold;

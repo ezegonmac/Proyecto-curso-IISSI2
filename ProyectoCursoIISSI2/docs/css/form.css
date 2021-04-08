@@ -48,12 +48,14 @@
 	background-color: #f3f3f3;
 }
 
-#submit-button {
+/* - buttons - */
+
+.button {
 	color: var(--font2-color);
 	font-family: var(--font2);
 	font-weight: bold;
 
-	margin-top: 20px;
+	margin: 20px;
 
 	width: 65px;
 	height: 25px;
@@ -66,7 +68,7 @@
 	cursor: pointer;
 }
 
-#submit-button:hover {
+.button:hover {
 	box-shadow: 0px 0px 5px black;
 	color: white;
 	background-color: var(--color3);
@@ -74,11 +76,28 @@
 	width: 80px;
 }
 
-#submit-button:focus {
+.button:focus {
 	box-shadow: inset 0px 0px 5px black;
 
 	border: none;
 	outline: none;
+}
+
+.large-button {
+	width: 130px;
+}
+
+.large-button:hover {
+	width: 135px;
+}
+
+#delete-button {
+	color: white;
+	background-color: tomato;
+}
+
+#delete-button {
+	background-color: rgb(200, 47, 20);
 }
 
 /* file-upload */

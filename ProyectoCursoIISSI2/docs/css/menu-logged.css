@@ -66,6 +66,8 @@
 }
 
 .menu_text p {
+	text-decoration: none;
+	margin: 0;
 	font-weight: bold;
 	color: var(--font1-color);
 }

@@ -8,6 +8,7 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="css/form.css">
         <link rel="stylesheet" type="text/css" href="css/modify-photo.css">
         <link rel="stylesheet" type="text/css" href="css/center-section.css">
 
@@ -33,7 +34,7 @@
 
                 <div class="col-sm">
                     <div id="left-card" class="container-md" > 
-                        <div id="photo-card" class="bottom-section">
+                        <div id="photo-card" class="section">
                             <p>foto</p>
                         </div>
                     </div>
@@ -41,10 +42,22 @@
                 
                 <div class="col-sm">
                     <div id="right-card" class="container-md">
-                        <div id="comments-card" class="bottom-section">
-                            <p>formulario</p>
+                        <div id="form-card" class="section">
+                            <label for="title" class="form-label" >Title</label>
+                            <input id="title" class="form-input" type="text" name="title">
+        
+                            <label for="description" class="form-label" >Description</label>
+                            <textarea id="description" class="form-input" name="description"></textarea>
+                        
+                            <div id="buttons">
+                            <input class="button large-button" type="button" value="Cancel">
+                            <input class="button large-button" type="submit" value="Save Changes">
+                            </div>
+                        
                         </div>
+                        <input id="delete-button" class="button" type="button" value="Delete">
                     </div>
+                    
                 </div>
 
             </div>
