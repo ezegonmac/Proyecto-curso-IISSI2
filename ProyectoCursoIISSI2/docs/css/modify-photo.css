@@ -11,18 +11,12 @@
 }
 
 #center-section .row {
-	background-color: pink;
-	border: 2px solid purple;
-
 	margin: 0;
 
 	width: 100vw;
 }
 
 #center-section .col-sm {
-	background-color: pink;
-	border: 2px solid purple;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,7 +25,7 @@
 /* - left-card -  */
 
 #left-card {
-	background-color: var(--background2);
+	background-color: var(--background5);
 	box-shadow: 0px 0px 25px black;
 
 	width: 70%;
@@ -56,7 +50,7 @@
 /* - right-card -  */
 
 #right-card {
-	background-color: var(--background2);
+	background-color: var(--background5);
 	box-shadow: 0px 0px 25px black;
 
 	width: 70%;
@@ -105,8 +99,7 @@
 /* --- bottom-sections --- */
 
 .section {
-	background-color: rgb(210, 255, 173);
-	border: 2px solid orange;
+	background-color: var(--background2);
 
 	margin: 0;
 	flex: 100%;

@@ -5,13 +5,14 @@
 }
 
 .title {
+	font-family: var(--font1);
+	color: var(--font1-color);
 	align-self: center;
+
+	margin: 0.5rem;
 }
 
 #container {
-	background-color: pink;
-	border: 2px solid purple;
-
 	height: 100%;
 
 	display: flex;
@@ -36,7 +37,7 @@
 
 	list-style: none;
 
-	margin: 15px;
+	margin: 8px 15px;
 
 	display: flex;
 	justify-content: space-between;

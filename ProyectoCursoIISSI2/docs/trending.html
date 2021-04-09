@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
         <link rel="stylesheet" type="text/css" href="css/trending.css">
-        <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
+        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+
+        <!-- BOOTSTRAP -->
+        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
+        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
+        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
+        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
+        <script src= "/js/libs/popper.min.js"> </script>
+        <script src= "/js/libs/bootstrap.min.js"> </script>
 
         <script src="js/utils/include.js"></script>
 
@@ -14,18 +25,146 @@
     </head>
     <body>
 
-        <div id="menu_logged"></div>
+        <div id="menu-logged"></div>
 
-        <div class="center-section">
-            <div class="card">
-                Center
+        <div id="center-section">
+
+            <div class="row">
+
+                <h5 class="card-title1" >Most Used Categories</h5>
+
+                <div class="col-md">
+                    <p>Categorie 1</p>
+                </div>
+                
+                <div class="col-md">
+                    <p>Categorie 2</p>
+                </div>
+
+                <div class="col-md">
+                    <p>Categorie 3</p>
+                </div>
+
+                <div class="col-md">
+                    <p>Categorie 4</p>
+                </div>
+
+                <div class="col-md">
+                    <p>Categorie 5</p>
+                </div>
+
+            </div >
+
+            <div class="row">
+
+                <h5 class="card-title1" >Best Punctuated Posts</h5>
+
+                <div class="col-sm">
+                    <p>Categorie 1</p>
+                </div>
+                
+                <div class="col-sm">
+                    <p>Categorie 2</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 3</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 4</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 5</p>
+                </div>
+
             </div>
-        </div>
 
+            <div class="row">
+
+                <h5 class="card-title1" >Most Commented Posts</h5>
+
+                <div class="col-sm">
+                    <p>Categorie 1</p>
+                </div>
+                
+                <div class="col-sm">
+                    <p>Categorie 2</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 3</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 4</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 5</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <h5 class="card-title1" >Most Followed Users</h5>
+
+                <div class="col-sm">
+                    <p>Categorie 1</p>
+                </div>
+                
+                <div class="col-sm">
+                    <p>Categorie 2</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 3</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 4</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 5</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <h5 class="card-title1" >Best Punctuated Posts</h5>
+
+                <div class="col-sm">
+                    <p>Categorie 1</p>
+                </div>
+                
+                <div class="col-sm">
+                    <p>Categorie 2</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 3</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 4</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>Categorie 5</p>
+                </div>
+
+            </div>
+
+        </div>
+        
         <div id="footer"></div>
         
         <script>
-            include("menu_logged.html", "#menu_logged")
+            include("menu_logged.html", "#menu-logged");
             include("footer.html", "#footer");
         </script>
     </body>
