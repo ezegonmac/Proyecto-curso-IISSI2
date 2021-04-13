@@ -67,16 +67,19 @@
 /* --- top-sections --- */
 
 .top-section {
-	background-color: navajowhite;
-	border: 2px solid orange;
+	background-color: var(--surface);
 
 	margin: 20px;
-	height: 275px;
+	min-height: 275px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.full-photo {
+	margin: 1rem;
 }
 
 /* --- bottom-sections --- */
@@ -100,6 +103,20 @@
 .top-section p,
 .bottom-section p {
 	margin: 0;
+}
+
+/* --- photo-card --- */
+
+#photo-card {
+	background-color: var(--surface);
+	border-radius: 3%;
+
+	flex: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 /* --- details-card --- */

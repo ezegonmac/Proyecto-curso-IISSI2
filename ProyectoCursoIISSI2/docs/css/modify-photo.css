@@ -87,7 +87,17 @@
 /* --- photo-card --- */
 
 #photo-card {
+	background-color: var(--surface);
+	border-radius: 3%;
+
 	margin: 20px;
+
+	flex: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 /* --- form-card --- */

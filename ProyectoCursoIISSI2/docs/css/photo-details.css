@@ -40,7 +40,7 @@
 	width: 70%;
 	min-width: 350px;
 	height: 80%;
-	min-height: 350px;
+	min-height: 380px;
 
 	margin: 50px 25px;
 	padding: 0;
@@ -57,7 +57,7 @@
 	width: 70%;
 	min-width: 350px;
 	height: 80%;
-	min-height: 350px;
+	min-height: 380px;
 
 	margin: 50px 25px;
 	padding: 0;
@@ -113,7 +113,7 @@
 		2px 0px 8px 2px rgba(44, 44, 44, 0.5);
 
 	margin: 0;
-	height: 275px;
+	height: 300px;
 
 	display: flex;
 	justify-content: center;
@@ -127,4 +127,8 @@
 	align-items: stretch;
 
 	overflow-y: scroll;
+}
+
+.full-photo {
+	margin: 1rem;
 }
