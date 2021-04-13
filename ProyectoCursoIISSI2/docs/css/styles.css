@@ -1,20 +1,22 @@
 :root {
-	--background1: #1c1c33;
-	--background2: #070725;
-	--background3: #e8e8e8;
-	--background4: #e8e8e86e;
-	--background5: #4d4d88d0;
+	--color1: #0064ff;
+	--color1-light: #6b91ff;
+	--color1-dark: #003bcb;
 
-	--color1: #092327;
-	--color2: #092327;
-	--color3: #ff2a6d;
+	--color2: #ff0080;
+	--color2-light: #ff5daf;
+	--color2-dark: #c50054;
 
-	--color1-dark: orange;
-	--color2-dark: orange;
+	--background: #f9f9f9;
+	--surface: #33333333;
+	--error: #b00020;
+
+	--on1: #ffffff;
+	--on2: #000000;
+	--on-background: #000000;
+	--on-surface: #000000;
+	--on-error: #ffffff;
 
 	--font1: "Lato", Helvetica;
 	--font2: "Lato", Helvetica;
-
-	--font1-color: white;
-	--font2-color: #020224;
 }

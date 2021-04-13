@@ -7,14 +7,15 @@
 #header a {
 	text-decoration: none;
 	font-family: var(--font1);
-	color: var(--font1-color);
+	color: var(--on1);
 }
 
 /* ---- HEADER ---- */
 
 #header {
-	background: var(--background1);
-	box-shadow: 0px 3px 15px black;
+	background: var(--color1);
+	box-shadow: 0px 2px 8px rgba(44, 44, 44, 0.5),
+		2px 0px 8px rgba(44, 44, 44, 0.5), -2px 0px 8px rgba(44, 44, 44, 0.5);
 
 	height: 10vh;
 	width: 100vw;
@@ -54,7 +55,7 @@
 }
 
 .menu_text {
-	border-left: 2px solid var(--font1-color);
+	border-left: 2px solid var(--on1);
 
 	height: 10vh;
 	width: 10vw;
@@ -69,15 +70,15 @@
 	text-decoration: none;
 	margin: 0;
 	font-weight: bold;
-	color: var(--font1-color);
+	color: var(--on1);
 }
 
 .menu_text:hover {
-	background-color: var(--color3);
+	background-color: var(--color2);
 }
 
 #menu_login {
-	border-left: 2px solid var(--font1-color);
+	border-left: 2px solid var(--on1);
 
 	width: auto;
 	min-width: 50px;
@@ -108,5 +109,5 @@
 }
 
 .logo:hover {
-	box-shadow: 0px 0px 10px var(--color3);
+	box-shadow: 0px 0px 10px var(--color2);
 }
