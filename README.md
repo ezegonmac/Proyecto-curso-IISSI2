@@ -1,1 +1,2 @@
-# Proyecto_Curso-iissi2
+# Silence blank project
+This is an empty Silence project.
