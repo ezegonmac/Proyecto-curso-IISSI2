@@ -1,31 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
         <link rel="stylesheet" type="text/css" href="css/profile.css">
-        <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
+
+        <!-- BOOTSTRAP -->
+        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
+        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
+        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
+        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
+        <script src= "/js/libs/popper.min.js"> </script>
+        <script src= "/js/libs/bootstrap.min.js"> </script>
 
         <script src="js/utils/include.js"></script>
 
         <title>Profile</title>
     </head>
     <body>
+        <div id="menu-logged"></div>
 
-        <div id="menu_logged"></div>
+        <div id="profile-section" class="row" >
 
-        <div class="center-section">
-            <div class="card">
-                Center
+            <div id="profile-card" class="col-md-6" >
+                <div id="avatar-card" >
+                    <img class="avatar" src="images/profile_photo.png">
+                    <p>@username</p>
+                </div>
+                <div id="details-card" >
+                    <p>Name</p>
+                    <p>Surnames</p>
+                </div>
             </div>
+
+            <div id="follow-card" class="col-md-3" >
+                
+                <button class="button" >Follow</button>
+                <div id="followers-card" >
+                    <div id="followers" >
+                        <p>Followers</p>
+                        <p>129</p>
+                    </div>
+                    <div id="following" >
+                        <p>Following</p>
+                        <p>891</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div id="footer"></div>
+        <div id="photo-gallery"></div>
         
+        <div id="footer"></div>
+
         <script>
-            include("menu_logged.html", "#menu_logged")
+            include("menu_logged.html", "#menu-logged");
+            include("photo_gallery.html", "#photo-gallery");
             include("footer.html", "#footer");
         </script>
     </body>

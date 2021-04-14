@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items: stretch;
+}
+
+#profile-section {
+	background-color: var(--background);
+	border-bottom: var(--surface) 2px solid;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#profile-section p {
+	color: var(--on1);
+	margin: 0.5em;
+	font-weight: bold;
+}
+
+/* - profile-card - */
+
+#profile-card {
+	background-color: var(--color1-light);
+	box-shadow: 0px 2px 8px 2px rgba(44, 44, 44, 0.15),
+		2px 0px 8px 2px rgba(44, 44, 44, 0.15);
+
+	height: 180px;
+
+	margin: 2.5rem;
+
+	display: flex;
+}
+
+#avatar-card {
+	width: 200px;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+#avatar-card > p {
+	font-style: italic;
+}
+
+#avatar-card > .avatar {
+	width: 80px;
+	height: 80px;
+
+	margin: 15px;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+#details-card {
+	width: 350px;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+/* - follow-card - */
+
+#follow-card {
+	height: 180px;
+	margin: 2.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#followers-card {
+	box-shadow: 0px 2px 8px 2px rgba(44, 44, 44, 0.15),
+		2px 0px 8px 2px rgba(44, 44, 44, 0.15);
+
+	background-color: var(--color1-light);
+	border-radius: 0.5rem;
+
+	width: 100%;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.button {
+	color: white;
+	background-color: var(--color2);
+	font-family: var(--font2);
+	font-weight: bold;
+
+	margin: 20px;
+
+	width: 65px;
+	height: 25px;
+	align-self: center;
+
+	border-radius: 10px;
+	border: none;
+
+	transition: ease 0.25s;
+	cursor: pointer;
+}
+
+.button:hover {
+	box-shadow: 0px 0px 5px black;
+
+	width: 80px;
+}
+
+.button:focus {
+	box-shadow: 0px 2px 8px 2px rgba(44, 44, 44, 0.5),
+		2px 0px 8px 2px rgba(44, 44, 44, 0.5);
+
+	border: none;
+	outline: none;
+}
+
+#followers {
+	text-align: center;
+}
+
+#following {
+	text-align: center;
+}
