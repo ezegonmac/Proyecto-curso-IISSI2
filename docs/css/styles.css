@@ -1,11 +1,11 @@
 :root {
-	--color1: #0064ff;
-	--color1-light: #6b91ff;
-	--color1-dark: #003bcb;
+	--color1: #0003b1;
+	--color1-light: #4b1aec;
+	--color1-dark: #0a009b;
 
-	--color2: #ff0080;
-	--color2-light: #ff5daf;
-	--color2-dark: #c50054;
+	--color2: #ff004c;
+	--color2-light: #ff0e6a;
+	--color2-dark: #c00060;
 
 	--background: #f9f9f9;
 	--surface: #33333333;
@@ -13,6 +13,7 @@
 
 	--on1: #ffffff;
 	--on2: #000000;
+	--on3: 	color: rgb(224, 224, 224);
 	--on-background: #000000;
 	--on-surface: #000000;
 	--on-error: #ffffff;

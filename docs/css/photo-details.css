@@ -7,9 +7,10 @@
 .top-section > p,
 .bottom-section > p,
 #bottom-card > p {
-	color: var(--on2);
+	color: var(--on1);
 	font-family: var(--font1);
 	font-weight: bold;
+	letter-spacing: 1px;
 
 	margin: 0;
 }
@@ -99,10 +100,31 @@
 	margin: 0;
 	height: 50px;
 
+	font-size: 2.8ch;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+}
+
+#title-card > p {
+	width: 80%;
+}
+
+#title-card > a {
+	width: 20%;
+	min-width: 40px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	border-radius: 50%;
+}
+
+#title-card #avatar {
+	width: 30px;
+	height: 30px;
 }
 
 /* --- bottom-sections --- */
@@ -129,6 +151,19 @@
 	overflow-y: scroll;
 }
 
+#comments-container > #new-com-button {
+	background-color: var(--color2);
+
+	position: absolute;
+	bottom: -10px;
+	right: 100px;
+}
+
 .full-photo {
 	margin: 1rem;
+}
+
+#bottom-card .date {
+	color: rgb(224, 224, 224);
+	font-weight: normal;
 }

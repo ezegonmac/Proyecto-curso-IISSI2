@@ -1,31 +1,74 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
         <link rel="stylesheet" type="text/css" href="css/search.css">
-        <link rel="stylesheet" type="text/css" href="css/menu-logged.css">
+        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+
+        <!-- BOOTSTRAP -->
+        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
+        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
+        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
+        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
+        <script src= "/js/libs/popper.min.js"> </script>
+        <script src= "/js/libs/bootstrap.min.js"> </script>
 
         <script src="js/utils/include.js"></script>
 
         <title>Search</title>
     </head>
     <body>
+        <div id="menu-logged"></div>
 
-        <div id="menu_logged"></div>
-
-        <div class="center-section">
-            <div class="card">
-                Center
-            </div>
+        <div id="title-box">
+            <p class="main-title">Search</p>
         </div>
 
-        <div id="footer"></div>
+        <nav class="navbar navbar-light bg-light">
+            <div id="search-section" class="container-md">
+              <form id="search-form" class="d-flex">
+                <div id="search-bar" >
+                    <input id="search-text-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+                
+                <div id="checkbox-section" >
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="categories" id="flexRadioDefault1">
+                        <label class="form-check-label" for="categories">
+                          Categories
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="users" id="flexRadioDefault2">
+                        <label class="form-check-label" for="users">
+                          Users
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="posts" id="flexRadioDefault3">
+                        <label class="form-check-label" for="posts">
+                          Posts
+                        </label>
+                    </div>
+                </div>
+              </form>
+            </div>
+        </nav>
+
+        <div id="photo-gallery"></div>
         
+        <div id="footer"></div>
+
         <script>
-            include("menu_logged.html", "#menu_logged")
+            include("menu_logged.html", "#menu-logged");
+            include("photo_gallery.html", "#photo-gallery");
             include("footer.html", "#footer");
         </script>
     </body>

@@ -54,6 +54,15 @@
 	align-items: center;
 }
 
+.menu_right .text {
+	display: inline;
+}
+
+.menu_right .icon {
+	display: none;
+	font-size: 28px;
+}
+
 .menu_text {
 	border-left: 2px solid var(--on1);
 
@@ -90,6 +99,7 @@
 
 #menu_login p {
 	padding: 0 30px;
+	font-style: italic;
 }
 
 #menu_login .profile-photo {
@@ -110,4 +120,14 @@
 
 .logo:hover {
 	box-shadow: 0px 0px 10px var(--color2);
+}
+
+@media screen and (max-width: 750px) {
+	.menu_right .text {
+		display: none;
+	}
+
+	.menu_right .icon {
+		display: inline;
+	}
 }
