@@ -81,3 +81,18 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
+
+#navbar-search::after {
+	content: "Nature";
+
+	color: var(--on1);
+	background-color: var(--surface);
+	font-size: 1.5rem;
+
+	width: 70%;
+	padding: 10px;
+
+	position: absolute;
+	bottom: -60px;
+	left: 12%;
+}

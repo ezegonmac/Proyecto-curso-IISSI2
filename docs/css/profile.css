@@ -155,3 +155,7 @@ body {
 #following {
 	text-align: center;
 }
+
+.photo-card .avatar {
+	display: none;
+}

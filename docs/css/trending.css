@@ -4,6 +4,25 @@
 	box-sizing: border-box;
 }
 
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#scrollspy-bar {
+	background-color: var(--surface);
+	font-weight: bold;
+	margin-top: 80px;
+	margin-bottom: 0;
+	justify-content: space-around;
+}
+
+#scrollspy-bar a {
+	text-decoration: underline;
+}
+
 .main-title {
 	background-color: var(--color2-light);
 	color: var(--on1);
@@ -26,12 +45,13 @@
 }
 
 #center-section .row {
-	background-color: var(--color1-light);
 	border-radius: 0.5rem;
 
 	margin: 5vw;
 
 	width: 90vw;
+
+	counter-reset: podium-position;
 }
 
 #center-section .col-md {
@@ -40,7 +60,6 @@
 
 	padding: 0;
 	margin: 2%;
-	height: 220px;
 
 	display: flex;
 	justify-content: space-around;
@@ -49,11 +68,11 @@
 }
 
 .mini-card {
-	background-color: var(--color2);
+	background-color: var(--color1-light);
 	border: none;
 
 	width: 130px;
-	height: 100%;
+	height: 130px;
 
 	margin: 0.8rem;
 
@@ -71,6 +90,27 @@
 	border: 2px solid var(--color2-light);
 }
 
+#center-section .col-md::before {
+	counter-increment: podium-position;
+	content: counter(podium-position);
+
+	color: var(--on1);
+
+	background-color: var(--gray);
+	border-radius: 50%;
+
+	height: 30px;
+	width: 30px;
+	padding: 3px;
+	margin: 0.5rem;
+
+	align-self: flex-start;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .punctuation {
 	color: var(--on2);
 	margin: 1rem 2rem;
@@ -81,32 +121,33 @@
 
 .mini-card p {
 	color: var(--on1);
-	margin: 1rem 2rem;
 	font-weight: bold;
 	text-decoration: none;
 	text-align: center;
+
+	margin: 0;
+
+	width: 90%;
+	word-wrap: break-word;
 }
 
 /* --- cards --- */
 
-.card-title1 {
+.card-title {
+	background-color: var(--color2);
 	font-family: var(--font1);
 	color: var(--on2);
 	font-weight: bold;
 
 	width: 100%;
-	height: 2rem;
-	margin: 1rem;
+	padding: 0.5rem;
+	margin: 0.8rem;
 	margin-bottom: 0;
 }
 
 /* - photo-card - */
 
 .photo-card {
-	width: 130px;
-
-	margin: 0.8rem;
-
 	display: flex;
 	justify-content: center;
 }
@@ -133,13 +174,13 @@
 	box-shadow: 0px 2px 8px 2px rgba(44, 44, 44, 0.4),
 		2px 0px 8px 2px rgba(44, 44, 44, 0.4);
 
-	width: 55px;
-	height: 55 px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
 
 	position: absolute;
-	top: 20%;
-	left: 20%;
+	top: 23%;
+	left: 23%;
 }
 
 /* - SECTIONS - */
@@ -156,5 +197,10 @@
 #section-mfu {
 }
 
-#section-mpf {
+#section-bpu {
+}
+
+#section-mfu .card-image,
+#section-bpu .card-image {
+	opacity: 0.7;
 }
