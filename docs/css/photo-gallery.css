@@ -145,3 +145,14 @@ body {
 	transform: scale(0);
 	opacity: 0;
 }
+
+/* --- card-text --- */
+
+.card-text > h5 {
+	font-family: var(--font2);
+	border-bottom: 2rem;
+}
+
+.card-text > p {
+	line-height: 1.3rem;
+}

@@ -26,8 +26,9 @@ body {
 #profile-section p {
 	color: var(--on1);
 	margin: 0.5em;
+
+	font-family: var(--font1);
 	font-weight: bold;
-	letter-spacing: 1px;
 }
 
 /* - profile-card - */
@@ -44,8 +45,13 @@ body {
 	display: flex;
 }
 
+#profile-card .name {
+	font-size: x-large;
+}
+
 #profile-card .surnames {
 	font-weight: normal;
+	font-size: large;
 }
 
 #avatar-card {
@@ -103,6 +109,7 @@ body {
 	border-radius: 0.5rem;
 
 	width: 100%;
+	min-width: 220px;
 
 	display: flex;
 	justify-content: space-around;
