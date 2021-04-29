@@ -1,91 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link
+			rel="shortcut icon"
+			href="images/favicon.ico"
+			type="image/x-icon"
+		/>
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
-        <link rel="stylesheet" type="text/css" href="css/photo-details.css">
-        <link rel="stylesheet" type="text/css" href="css/form.css">
-        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/scrollbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/photo-details.css" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" />
+		<link rel="stylesheet" type="text/css" href="css/center-section.css" />
 
-        <!-- BOOTSTRAP -->
-        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
-        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
-        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
-        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
-        <script src= "/js/libs/popper.min.js"> </script>
-        <script src= "/js/libs/bootstrap.min.js"> </script>
+		<!-- BOOTSTRAP -->
+		<meta
+			name="viewport"
+			content="width=device-width , initial-scale=1 ,shrink-to-fit=no"
+		/>
+		<link rel=" stylesheet " href="/css/bootstrap.min.css" />
+		<link rel=" stylesheet " href="/css/font-awesome.min.css" />
+		<script src="/js/libs/jquery-3.4.1.min.js"></script>
+		<script src="/js/libs/popper.min.js"></script>
+		<script src="/js/libs/bootstrap.min.js"></script>
 
-        <script src="js/utils/include.js"></script>
+		<script src="js/utils/include.js"></script>
+		<script src="js/photo_details.js" type="module"></script>
 
-        <title>Photo Details</title>
-    </head>
-    <body>
+		<title>Photo Details</title>
+	</head>
+	<body>
+		<div id="menu-logged"></div>
 
-        <div id="menu-logged"></div>
+		<div id="center-section">
+			<div id="center-card" class="row">
+				<div id="right-section" class="col-sm">
+					<div id="right-card" class="container-md">
+						<div id="valoration-card" class="top-section">
+							<p class="valoration">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-half-full"></i>
+							</p>
+						</div>
 
-        <div id="center-section">
+						<div id="comments-container" class="bottom-section">
+							<div id="comments"></div>
+							<button
+								id="new-com-button"
+								class="button large-button"
+								>New Comment</button
+							>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div id="center-card" class="row">
+			<div class="row">
+				<div id="bottom-card">
+					<p>Description...</p>
+					<p class="date">Upload Date: 24/02/2001</p>
+				</div>
+			</div>
+		</div>
 
-                <div class="col-sm">
-                    <div id="left-card" class="container-md" >
-                        <div id="title-card" class="top-section">
-                            <a href="profile.html">
-                                <img id="avatar"
-                                     class="profile_photo"
-                                     src="images/logo.png" 
-                                     alt="profile_photo">
-                            </a>
-                            <p>Título</p>
-                        </div>
-                            
-                        <div id="photo-card" class="bottom-section">
-                            <img class="full-photo" src="https://source.unsplash.com/270x270">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm">
-                    <div id="right-card" class="container-md">
-                        <div id="valoration-card" class="top-section">
-                            <p class="valoration" >
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-full"></i>
-                            </p>
-                        </div>
+		<div id="footer"></div>
 
-                        <div id="comments-container" class="bottom-section">
-                            <div id="comments"></div>
-                            <button id="new-com-button" class="button large-button">New Comment</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div id="bottom-card">
-                    <p>Description...</p>
-                    <p class="date" >Upload Date: 24/02/2001</p>
-                </div>
-            </div>
-
-        </div>
-        
-        <div id="footer"></div>
-        
-        <script>
-            include("menu_logged.html", "#menu-logged");
-            include("comments.html", "#comments");
-            include("footer.html", "#footer");
-        </script>
-    </body>
+		<script>
+			include("menu_logged.html", "#menu-logged");
+			include("comments.html", "#comments");
+			include("footer.html", "#footer");
+		</script>
+	</body>
 </html>

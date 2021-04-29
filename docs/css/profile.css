@@ -73,6 +73,7 @@ body {
 	height: 80px;
 
 	margin: 15px;
+	border-radius: 50%;
 
 	display: flex;
 	justify-content: space-around;

@@ -1,69 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link
+			rel="shortcut icon"
+			href="images/favicon.ico"
+			type="image/x-icon"
+		/>
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
-        <link rel="stylesheet" type="text/css" href="css/profile.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/scrollbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/profile.css" />
 
-        <!-- BOOTSTRAP -->
-        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
-        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
-        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
-        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
-        <script src= "/js/libs/popper.min.js"> </script>
-        <script src= "/js/libs/bootstrap.min.js"> </script>
+		<!-- BOOTSTRAP -->
+		<meta
+			name="viewport"
+			content="width=device-width , initial-scale=1 ,shrink-to-fit=no"
+		/>
+		<link rel=" stylesheet " href="/css/bootstrap.min.css" />
+		<link rel=" stylesheet " href="/css/font-awesome.min.css" />
+		<script src="/js/libs/jquery-3.4.1.min.js"></script>
+		<script src="/js/libs/popper.min.js"></script>
+		<script src="/js/libs/bootstrap.min.js"></script>
 
-        <script src="js/utils/include.js"></script>
+		<script src="js/utils/include.js"></script>
+		<script src="js/profile.js" type="module"></script>
+		<script src="js/photo_gallery.js" type="module"></script>
+		<script src="js/menu_logged.js" type="module"></script>
 
-        <title>Profile</title>
-    </head>
-    <body>
-        <div id="menu-logged"></div>
+		<title>Profile</title>
+	</head>
+	<body>
+		<div id="menu-logged"></div>
 
-        <div id="profile-section" class="row" >
+		<div id="profile-section" class="row"> </div>
 
-            <div id="profile-card" class="col-md-6" >
-                <div id="avatar-card" >
-                    <img class="avatar" src="images/profile_photo.png">
-                    <p id="username" >@username</p>
-                </div>
-                <div id="details-card" >
-                    <p class="name" >Name</p>
-                    <p class="surnames" >Surname1 Surname2</p>
-                </div>
-            </div>
+		<div id="photo-gallery"></div>
 
-            <div id="follow-card" class="col-md-3" >
-                
-                <div id="followers-card" >
-                    <div id="followers" >
-                        <p>Followers</p>
-                        <p class="value" >129</p>
-                    </div>
-                    <div id="following" >
-                        <p>Following</p>
-                        <p class="value" >891</p>
-                    </div>
-                </div>
-                <button class="button" >Follow</button>
+		<div id="footer"></div>
 
-            </div>
-
-        </div>
-
-        <div id="photo-gallery"></div>
-        
-        <div id="footer"></div>
-
-        <script>
-            include("menu_logged.html", "#menu-logged");
-            include("photo_gallery.html", "#photo-gallery");
-            include("footer.html", "#footer");
-        </script>
-    </body>
+		<script>
+			include("menu_logged.html", "#menu-logged");
+			include("photo_gallery.html", "#photo-gallery");
+			include("footer.html", "#footer");
+		</script>
+	</body>
 </html>
