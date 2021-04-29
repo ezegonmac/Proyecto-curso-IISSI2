@@ -19,12 +19,6 @@
     "vueIndentScriptAndStyle": false,
     "editor.formatOnSave": true,
     "prettier.useTabs": true,
-    "workbench.editorAssociations": [
-      {
-        "viewType": "jupyter.notebook.ipynb",
-        "filenamePattern": "*.ipynb"
-      }
-    ],
 
     "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
