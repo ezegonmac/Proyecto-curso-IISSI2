@@ -69,6 +69,19 @@
 	flex-direction: column;
 }
 
+/* valoration */
+
+.valoration {
+	height: 100%;
+	width: 30px;
+
+	font-size: 1.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* - bottom-card -  */
 
 #bottom-card {

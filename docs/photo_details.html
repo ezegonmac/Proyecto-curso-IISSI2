@@ -15,20 +15,23 @@
 		<link rel="stylesheet" type="text/css" href="css/photo-details.css" />
 		<link rel="stylesheet" type="text/css" href="css/form.css" />
 		<link rel="stylesheet" type="text/css" href="css/center-section.css" />
+		<link rel="stylesheet" type="text/css" href="css/modal.css" />
 
 		<!-- BOOTSTRAP -->
 		<meta
 			name="viewport"
 			content="width=device-width , initial-scale=1 ,shrink-to-fit=no"
 		/>
-		<link rel=" stylesheet " href="/css/bootstrap.min.css" />
-		<link rel=" stylesheet " href="/css/font-awesome.min.css" />
-		<script src="/js/libs/jquery-3.4.1.min.js"></script>
-		<script src="/js/libs/popper.min.js"></script>
-		<script src="/js/libs/bootstrap.min.js"></script>
+		<link rel=" stylesheet " href="css/bootstrap.min.css" />
+		<link rel=" stylesheet " href="css/font-awesome.min.css" />
+		<script src="js/libs/jquery-3.4.1.min.js"></script>
+		<script src="js/libs/popper.min.js"></script>
+		<script src="js/libs/bootstrap.min.js"></script>
 
 		<script src="js/utils/include.js"></script>
 		<script src="js/photo_details.js" type="module"></script>
+		<script src="js/menu_logged.js" type="module"></script>
+		<script src="js/comments.js" type="module"></script>
 
 		<title>Photo Details</title>
 	</head>
@@ -37,34 +40,100 @@
 
 		<div id="center-section">
 			<div id="center-card" class="row">
+				<div id="left-section" class="col-sm">
+					<div id="left-card" class="container-md">
+						<!-- title-card -->
+						<!-- photo-card -->
+					</div>
+				</div>
 				<div id="right-section" class="col-sm">
 					<div id="right-card" class="container-md">
-						<div id="valoration-card" class="top-section">
-							<p class="valoration">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-full"></i>
-							</p>
-						</div>
+						<!-- val-card -->
 
 						<div id="comments-container" class="bottom-section">
 							<div id="comments"></div>
 							<button
 								id="new-com-button"
 								class="button large-button"
-								>New Comment</button
+								data-toggle="modal"
+								data-target="#new-com-modal"
 							>
+								New Comment
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="row">
-				<div id="bottom-card">
-					<p>Description...</p>
-					<p class="date">Upload Date: 24/02/2001</p>
+			<div id="bottom-row" class="row">
+				<!-- desc-card -->
+			</div>
+		</div>
+
+		<!-- MODAL FOR NEW COMMENT -->
+		<div
+			id="new-com-modal"
+			class="modal fade"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel"
+							>New comment</h5
+						>
+						<button
+							type="button"
+							id="btn-close"
+							class="btn-close"
+							data-dismiss="modal"
+							aria-label="Close"
+						>
+							<i class="fa fa-close"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="mb-3">
+								<label
+									for="recipient-name"
+									class="col-form-label"
+									>Valoration:</label
+								>
+								<input
+									id="rating-control"
+									class="form-control"
+									type="number"
+									step="0.1"
+									min="0"
+									max="5"
+									placeholder="Rate 1-5"
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="message-text" class="col-form-label"
+									>Comment:</label
+								>
+								<textarea
+									id="message-text"
+									class="form-control"
+								></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-dismiss="modal"
+							>Close</button
+						>
+						<button type="button" class="btn btn-primary"
+							>Send message</button
+						>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
-import { getUserByName } from "/js/renderers/users.js";
+import { getUserByUsername } from "/js/renderers/users.js";
 
 let photos = [
 	{
@@ -8,7 +8,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/250x250",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "3.5",
 		date: "10/02/2020",
 	},
 	{
@@ -16,7 +16,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/251x250",
 		user: "@usuario1",
-		valoration: 5,
+		valoration: "4.5",
 		date: "10/02/2020",
 	},
 	{
@@ -24,7 +24,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/252x250",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "4",
 		date: "10/02/2020",
 	},
 	{
@@ -32,7 +32,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/253x250",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "1",
 		date: "10/02/2020",
 	},
 	{
@@ -40,7 +40,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/253x251",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "5",
 		date: "10/02/2020",
 	},
 	{
@@ -48,7 +48,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/253x252",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "1",
 		date: "10/02/2020",
 	},
 	{
@@ -56,7 +56,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/253x253",
 		user: "@usuario1",
-		valoration: 2,
+		valoration: "3",
 		date: "10/02/2020",
 	},
 	{
@@ -64,7 +64,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/252x253",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "2.3",
 		date: "10/02/2020",
 	},
 	{
@@ -72,7 +72,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/253x252",
 		user: "@usuario1",
-		valoration: 8,
+		valoration: "1",
 		date: "10/02/2020",
 	},
 	{
@@ -80,7 +80,7 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/255x253",
 		user: "@usuario1",
-		valoration: 10,
+		valoration: "3",
 		date: "10/02/2020",
 	},
 	{
@@ -88,14 +88,14 @@ let photos = [
 		description: "A very good boy",
 		url: "https://source.unsplash.com/256x253",
 		user: "@usuario1",
-		valoration: 5,
+		valoration: "4.5",
 		date: "10/02/2020",
 	},
 ];
 
 const photoRenderer = {
 	asCard: function (photo) {
-		let user = getUserByName(photo.user);
+		let user = getUserByUsername(photo.user);
 		let html = `<div class="col">
                         <a class="photo-card" href="photo_details.html">
                             <img class="card-image" 
@@ -113,27 +113,51 @@ const photoRenderer = {
 		return card;
 	},
 	asDetail: function (photo) {
-		let user = getUserByName(photo.user);
-		let html = `<div id="left-section" class="col-sm">
-						<div id="left-card" class="container-md">
-							<div id="title-card" class="top-section">
-								<a href="profile.html">
-									<img id="avatar"
-										class="profile_photo"
-										src=${user.avatar}
-										alt="profile_photo">
-								</a>
-								<p>${photo.title}</p>
-							</div>
-								
-							<div id="photo-card" class="bottom-section">
-								<img class="full-photo" src=${photo.url}>
-							</div>
+		let user = getUserByUsername(photo.user);
+
+		// CALCS FOR STAR RATINGS
+		// Get percentage
+		let rating = photo.valoration;
+		const starPercentage = (rating / 5) * 100;
+
+		// Round to nearest 10
+		const starPercentageRounded = `${
+			Math.round(starPercentage / 10) * 10
+		}%`;
+
+		let html1 = `<div id="title-card" class="top-section">
+						<a href="profile.html">
+							<img id="avatar"
+								class="profile_photo"
+								src=${user.avatar}
+								alt="profile_photo">
+						</a>
+						<p>${photo.title}</p>
+					</div>`;
+
+		let html2 = `<div id="photo-card" class="bottom-section">
+						 <img class="full-photo" src=${photo.url}>
+					 </div>`;
+
+		let html3 = `<div id="valoration-card" class="top-section">
+						<div class="valoration">
+							<span class="icon stars-outer">
+								<span style="width: ${starPercentageRounded}" 
+									class="icon stars-inner"></span>
+							</span>
 						</div>
 					</div>`;
 
-		let card = parseHTML(html);
-		return card;
+		let html4 = `<div id="bottom-card">
+						<p>${photo.description}</p>
+						<p class="date">Upload Date: ${photo.date}</p>
+					</div>`;
+
+		let title_card = parseHTML(html1);
+		let img_card = parseHTML(html2);
+		let val_card = parseHTML(html3);
+		let desc_card = parseHTML(html4);
+		return [title_card, img_card, val_card, desc_card];
 	},
 };
 

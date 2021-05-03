@@ -68,7 +68,7 @@ const userRenderer = {
 	asCard: function (user) {},
 };
 
-function getUserByName(username) {
+function getUserByUsername(username) {
 	for (let user of users) {
 		if (username == user.username) {
 			return user;
@@ -80,4 +80,4 @@ function getUserByName(username) {
 
 export { users };
 export { userRenderer };
-export { getUserByName };
+export { getUserByUsername };
