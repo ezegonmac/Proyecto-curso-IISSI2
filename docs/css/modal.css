@@ -1,4 +1,75 @@
+.modal-header {
+}
+
 #btn-close {
 	background-color: transparent;
 	border: none;
+}
+
+/* -- COMMENT-DETAILS MODAL -- */
+
+.modal-body {
+	display: flex;
+	flex-direction: column;
+}
+
+#com-details-modal .modal-header {
+	justify-content: flex-end;
+}
+
+.modal-body > .profile-zone {
+	background-color: var(--color2);
+
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.modal-body > .profile-zone > a {
+	background-color: var(--color2);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+
+	text-decoration: none;
+	color: var(--on3);
+
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+
+	margin: 12px;
+}
+
+.modal-body > .profile-zone > a:hover {
+	text-decoration: none;
+	color: var(--on3);
+}
+
+.modal-body > .profile-zone .profile-photo {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+}
+
+.modal-body > .profile-zone .user {
+	font-size: 1.5rem;
+	color: var(--on1);
+	letter-spacing: 1px;
+	font-family: var(--font1);
+	font-style: italic;
+
+	margin: 5px 20px;
+}
+
+.modal-body > form > #message-text {
+	font-size: 1.2rem;
+	color: var(--on2);
+	font-family: var(--font1);
+	min-height: 170px;
+}
+
+.modal-body > .date {
+	margin: 5px;
 }

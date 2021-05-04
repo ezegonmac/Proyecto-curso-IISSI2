@@ -1,6 +1,7 @@
-# TODO LIST
+## TODO LIST
 
-# -----------
-
--   Add "asDetail" function to commentRenderer
--   Forms validation
+-   [x] Add "asDetail" function to commentRenderer
+-   [] Add "asCard" function to userRenderer
+-   [] Forms validation
+    1.  -   [] ...
+    2.  -   []

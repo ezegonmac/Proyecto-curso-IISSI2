@@ -40,39 +40,22 @@
 
 	list-style: none;
 
+	height: 80px;
 	margin: 8px 15px;
 
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: stretch;
+	align-items: stretch;
 }
 
-.comment > p {
-	color: var(--on1);
-	font-size: 1.5ch;
-	letter-spacing: 1px;
-	font-family: Georgia;
-	width: 90%;
-	height: 80%;
+/* PROFILE-ZONE */
 
-	overflow: hidden;
-
-	margin: 10px;
+.comment > .profile-zone {
+	height: auto;
+	width: 30%;
 }
 
-.comment > p::before {
-	content: open-quote;
-}
-
-.comment > p::after {
-	content: close-quote;
-}
-
-.profile-zone {
-	width: 180px;
-}
-
-.profile-zone .profile-photo {
+.comment > .profile-zone .profile-photo {
 	height: 25px;
 	width: 25px;
 	border-radius: 50%;
@@ -80,12 +63,15 @@
 	margin: 8px;
 }
 
-.profile-zone a {
+.comment > .profile-zone a {
 	background-color: var(--color2);
 	border-radius: 0.8rem 0 0 0.8rem;
 
 	text-decoration: none;
 	color: var(--on3);
+
+	width: 100%;
+	height: 100%;
 
 	display: flex;
 	justify-content: center;
@@ -93,15 +79,60 @@
 	flex-direction: column;
 }
 
-.profile-zone a:hover {
+.comment > .profile-zone a:hover {
 	text-decoration: none;
 	color: var(--on3);
 }
 
-.profile-zone .user {
+.comment > .profile-zone .user {
 	margin: 5px 10px;
 	color: var(--on3);
 	font-style: italic;
+}
+
+/* COMMENT-ZONE */
+
+.comment > .comment-zone {
+	height: 100%;
+	width: 70%;
+}
+
+.comment > .comment-zone > a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+
+	cursor: pointer;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.comment > .comment-zone p {
+	color: var(--on1);
+	font-size: 1.5ch;
+	letter-spacing: 1px;
+	font-family: var(--font1);
+
+	height: 70%;
+	margin: 5%;
+
+	/* after 3 line show ... */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.comment > .comment-zone p::before {
+	content: open-quote;
+}
+
+.comment > .comment-zone p::after {
+	content: close-quote;
 }
 
 /* RATING */
