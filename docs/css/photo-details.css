@@ -103,6 +103,15 @@
 	flex-direction: column;
 }
 
+#bottom-card > p {
+	width: 90%;
+}
+
+#bottom-card > .button-container {
+	position: relative;
+	padding-left: 70%;
+}
+
 /* --- top-sections --- */
 
 .top-section {
@@ -180,4 +189,9 @@
 #bottom-card .date {
 	color: rgb(224, 224, 224);
 	font-weight: normal;
+}
+
+#errors-new-com,
+#errors-mod-com {
+	padding: 20px;
 }

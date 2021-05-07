@@ -103,7 +103,7 @@ const commentRenderer = {
 									<p class="user">${user.username}</p>
 								</a>
 							</div>
-							<form>
+							<form id="mod-com-form">
 								<div class="mb-3">
 									<label
 										for="recipient-name"
@@ -136,8 +136,10 @@ const commentRenderer = {
 							<p class="date">Posting date: ${comment.date}</p>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-							>Modify
+							<button id="mod-com-btn"
+									type="button" 
+									class="btn btn-primary"
+							>Post
 							</button>
 						</div>
 					</div>`;

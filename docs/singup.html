@@ -1,71 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link
+			rel="shortcut icon"
+			href="images/favicon.ico"
+			type="image/x-icon"
+		/>
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
-        <link rel="stylesheet" type="text/css" href="css/singup.css">
-        <link rel="stylesheet" type="text/css" href="css/form.css">
-        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/scrollbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/singup.css" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" />
+		<link rel="stylesheet" type="text/css" href="css/center-section.css" />
 
-        <!-- BOOTSTRAP -->
-        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
-        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
-        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
-        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
-        <script src= "/js/libs/popper.min.js"> </script>
-        <script src= "/js/libs/bootstrap.min.js"> </script>
+		<!-- BOOTSTRAP -->
+		<meta
+			name="viewport"
+			content="width=device-width , initial-scale=1 ,shrink-to-fit=no"
+		/>
+		<link rel=" stylesheet " href="/css/bootstrap.min.css" />
+		<link rel=" stylesheet " href="/css/font-awesome.min.css" />
+		<script src="/js/libs/jquery-3.4.1.min.js"></script>
+		<script src="/js/libs/popper.min.js"></script>
+		<script src="/js/libs/bootstrap.min.js"></script>
 
-        <script src="js/utils/include.js"></script>
+		<script src="js/utils/include.js"></script>
+		<script src="js/singup.js" type="module"></script>
 
-        <title>Singup</title>
-    </head>
-    <body>
+		<title>Singup</title>
+	</head>
+	<body>
+		<div id="header"></div>
 
-        <div id="header"></div>
-    
-        <div id="center-section">
-            <div id="center-card" class="row">
+		<div id="errors"></div>
 
-                <div id="upper-card" class="col-sm">
-                    <form class=login-form >
-                        <label for="username" class="form-label" >Username</label>
-                        <input id="username" class="form-input" type="text" name="username">
-    
-                        <label for="password" class="form-label" >Password</label>
-                        <input id="password" class="form-input" type="password" name="password">
-    
-                        <label for="c-password" class="form-label" >Confirm Password</label>
-                        <input id="c-password" class="form-input" type="password" name="c-password">
-                        
-                        <label for="email" class="form-label" >Email</label>
-                        <input id="email" class="form-input" type="email" name="email">
-                    </form>
-                </div>
-                
-                <div id="bottom-card" class="col-sm">
-                    <div class="form-file">
-                        <label class="form-label" >Profile Photo</label>
-                        <input type="file" class="form-control" id="inputGroupFile01">
-                    </div>
-    
-                    <input class="button" type="submit" value="Singup">
-                </div>
+		<div id="center-section">
+			<form id="form">
+				<div id="center-card" class="row">
+					<div id="upper-card" class="col-sm">
+						<fieldset id="singup-form">
+							<label for="firstName" class="form-label"
+								>First Name</label
+							>
+							<input
+								id="firstName"
+								class="form-input"
+								type="text"
+								name="firstName"
+								required
+							/>
 
-            </div>
-        </div>
+							<label for="surnames" class="form-label"
+								>Surnames</label
+							>
+							<input
+								id="surnames"
+								class="form-input"
+								type="text"
+								name="surnames"
+								required
+							/>
 
-        <div id="footer"></div>
+							<label for="password" class="form-label"
+								>Password</label
+							>
+							<input
+								id="password"
+								class="form-input"
+								type="password"
+								name="password"
+								required
+							/>
 
-        <script>
-            include("header.html", "#header");
-            include("menu.html", "#menu");
-            include("footer.html", "#footer");
-        </script>
-    </body>
+							<label for="c-password" class="form-label"
+								>Confirm Password</label
+							>
+							<input
+								id="c-password"
+								class="form-input"
+								type="password"
+								name="c-password"
+								required
+							/>
+						</fieldset>
+					</div>
 
+					<div id="bottom-card" class="col-sm">
+						<fieldset id="file-form">
+							<label for="username" class="form-label"
+								>Username</label
+							>
+							<input
+								id="username"
+								class="form-input"
+								type="text"
+								name="username"
+								required
+							/>
+
+							<label for="email" class="form-label">Email</label>
+							<input
+								id="email"
+								class="form-input"
+								type="email"
+								name="email"
+								required
+							/>
+
+							<label for="phone" class="form-label"
+								>Phone Number</label
+							>
+							<input
+								id="phone"
+								class="form-input"
+								type="tel"
+								name="phone"
+							/>
+
+							<label class="form-label">Profile Photo</label>
+							<input type="file" class="form-control" />
+						</fieldset>
+
+						<button id="submit-btn" class="button" type="submit"
+							>Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div id="footer"></div>
+
+		<script>
+			include("header.html", "#header");
+			include("footer.html", "#footer");
+		</script>
+	</body>
 </html>

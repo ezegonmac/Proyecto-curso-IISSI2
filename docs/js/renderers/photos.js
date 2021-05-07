@@ -151,6 +151,11 @@ const photoRenderer = {
 		let html4 = `<div id="bottom-card">
 						<p>${photo.description}</p>
 						<p class="date">Upload Date: ${photo.date}</p>
+						<div class="button-container">
+							<button id="mod-photo-button" class="button large-button"
+							>Modify Photo
+							</button>
+						</div>
 					</div>`;
 
 		let title_card = parseHTML(html1);

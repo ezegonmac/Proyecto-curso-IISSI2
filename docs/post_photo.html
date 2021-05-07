@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link
+			rel="shortcut icon"
+			href="images/favicon.ico"
+			type="image/x-icon"
+		/>
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/form.css">
-        <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
-        <link rel="stylesheet" type="text/css" href="css/post-photo.css">
-        <link rel="stylesheet" type="text/css" href="css/center-section.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" />
+		<link rel="stylesheet" type="text/css" href="css/scrollbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/post-photo.css" />
+		<link rel="stylesheet" type="text/css" href="css/center-section.css" />
 
-        <!-- BOOTSTRAP -->
-        <meta name= "viewport" content= "width=device-width , initial-scale=1 ,shrink-to-fit=no">
-        <link rel= " stylesheet " href= "/css/bootstrap.min.css">
-        <link rel= " stylesheet " href= "/css/font-awesome.min.css">
-        <script src= "/js/libs/jquery-3.4.1.min.js"> </script>
-        <script src= "/js/libs/popper.min.js"> </script>
-        <script src= "/js/libs/bootstrap.min.js"> </script>
+		<!-- BOOTSTRAP -->
+		<meta
+			name="viewport"
+			content="width=device-width , initial-scale=1 ,shrink-to-fit=no"
+		/>
+		<link rel=" stylesheet " href="/css/bootstrap.min.css" />
+		<link rel=" stylesheet " href="/css/font-awesome.min.css" />
+		<script src="/js/libs/jquery-3.4.1.min.js"></script>
+		<script src="/js/libs/popper.min.js"></script>
+		<script src="/js/libs/bootstrap.min.js"></script>
 
-        <script src="js/utils/include.js"></script>
+		<script src="js/utils/include.js"></script>
+		<script src="js/menu_logged.js" type="module"></script>
 
-        <title>Post Photo</title>
-    </head>
-    <body>
+		<title>Post Photo</title>
+	</head>
+	<body>
+		<div id="menu-logged"></div>
 
-        <div id="menu-logged"></div>
+		<div id="center-section">
+			<div id="center-card" class="row">
+				<div class="col-sm">
+					<div id="left-card" class="container-md">
+						<div id="photo-card" class="top-section">
+							<img
+								class="full-photo"
+								src="https://source.unsplash.com/270x270"
+							/>
+						</div>
 
-        <div id="center-section">
+						<div id="upload-card" class="bottom-section">
+							<input
+								id="file-button"
+								type="file"
+								class="form-control"
+								id="inputGroupFile01"
+							/>
+						</div>
+					</div>
+				</div>
 
-            <div id="center-card" class="row">
+				<div class="col-sm">
+					<div id="right-card" class="container-md">
+						<div id="details-card" class="bottom-section">
+							<label for="title" class="form-label">Title</label>
+							<input
+								id="title"
+								class="form-input"
+								type="text"
+								name="title"
+							/>
 
-                <div class="col-sm">
-                    <div id="left-card" class="container-md" >
-                        <div id="photo-card" class="top-section">
-                            <img class="full-photo" src="https://source.unsplash.com/270x270">
-                        </div>
-                            
-                        <div id="upload-card" class="bottom-section">
-                            <input id="file-button" type="file" class="form-control" id="inputGroupFile01">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm">
-                    <div id="right-card" class="container-md">
-                        <div id="details-card" class="bottom-section">
-                            <label for="title" class="form-label" >Title</label>
-                            <input id="title" class="form-input" type="text" name="title">
-        
-                            <label for="description" class="form-label" >Description</label>
-                            <textarea id="description" class="form-input" name="description"></textarea>
-                        
-                            <div id="buttons">
-                            <input class="button large-button" type="button" value="Cancel">
-                            <input class="button large-button" type="submit" value="Save Changes">
-                            </div>
-                        </div>
-                        <input id="post-button" class="button" type="button" value="Post">
-                    </div>
-                </div>
+							<label for="description" class="form-label"
+								>Description</label
+							>
+							<textarea
+								id="description"
+								class="form-input"
+								name="description"
+							></textarea>
+						</div>
+						<input
+							id="post-button"
+							class="button"
+							type="submit"
+							value="Post"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
 
-            </div>
+		<div id="footer"></div>
 
-        </div>
-        
-        <div id="footer"></div>
-
-        <script>
-            include("menu_logged.html", "#menu-logged");
-            include("footer.html", "#footer");
-        </script>
-    </body>
+		<script>
+			include("menu_logged.html", "#menu-logged");
+			include("footer.html", "#footer");
+		</script>
+	</body>
 </html>

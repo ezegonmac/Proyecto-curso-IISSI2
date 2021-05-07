@@ -80,6 +80,7 @@
 			aria-labelledby="exampleModalLabel"
 			aria-hidden="true"
 		>
+			<div id="errors-new-com"></div>
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -95,7 +96,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form id="new-com-form">
 							<div class="mb-3">
 								<label
 									for="recipient-name"
@@ -104,12 +105,14 @@
 								>
 								<input
 									id="rating-control"
+									name="rating"
 									class="form-control"
 									type="number"
 									step="0.1"
 									min="0"
 									max="5"
 									placeholder="Rate 1-5"
+									required
 								/>
 							</div>
 							<div class="mb-3">
@@ -119,19 +122,19 @@
 								<textarea
 									id="message-text"
 									class="form-control"
+									name="text"
+									maxlength="300"
+									required
 								></textarea>
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
 						<button
-							type="button"
-							class="btn btn-secondary"
-							data-dismiss="modal"
-							>Close</button
-						>
-						<button type="button" class="btn btn-primary"
-							>Send message</button
+							id="new-com-btn"
+							type="submit"
+							class="btn btn-primary"
+							>Post</button
 						>
 					</div>
 				</div>

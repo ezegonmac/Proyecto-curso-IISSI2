@@ -124,6 +124,7 @@
 #details-card {
 	background-color: var(--surface);
 	border-radius: 3%;
+	padding-bottom: 5%;
 
 	flex: 100%;
 
