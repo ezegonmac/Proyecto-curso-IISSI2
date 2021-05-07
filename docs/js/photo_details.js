@@ -60,7 +60,6 @@ modComBtn.onclick = function () {
 function handleSubmitNewCom(event) {
 	event.preventDefault();
 
-	alert("Form Sent!");
 	let form = event.target;
 	let formData = new FormData(form);
 
@@ -80,7 +79,6 @@ function handleSubmitNewCom(event) {
 function handleSubmitModCom(event) {
 	event.preventDefault();
 
-	alert("Form Sent!");
 	let form = event.target;
 	let formData = new FormData(form);
 

@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/form.css" />
 		<link rel="stylesheet" type="text/css" href="css/modify-photo.css" />
 		<link rel="stylesheet" type="text/css" href="css/center-section.css" />
+		<link rel="stylesheet" type="text/css" href="css/modal.css" />
 
 		<!-- BOOTSTRAP -->
 		<meta
@@ -29,6 +30,7 @@
 
 		<script src="js/utils/include.js"></script>
 		<script src="js/menu_logged.js" type="module"></script>
+		<script src="js/modify_photo.js" type="module"></script>
 
 		<title>Modify Photo</title>
 	</head>
@@ -36,57 +38,111 @@
 		<div id="menu-logged"></div>
 
 		<div id="center-section">
-			<div id="center-card" class="row">
-				<div class="col-sm">
-					<div id="left-card" class="container-md">
-						<div id="photo-card" class="section">
-							<img
-								class="full-photo"
-								src="https://source.unsplash.com/270x270"
+			<form id="form">
+				<div id="center-card" class="row">
+					<div class="col-sm">
+						<div id="left-card" class="container-md">
+							<div id="photo-card" class="section">
+								<img
+									class="full-photo"
+									src="https://source.unsplash.com/270x270"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm">
+						<div id="right-card" class="container-md">
+							<div id="form-card" class="section">
+								<label for="title" class="form-label"
+									>Title</label
+								>
+								<input
+									id="title"
+									class="form-input"
+									type="text"
+									maxlength="50"
+									name="title"
+								/>
+
+								<label for="description" class="form-label"
+									>Description</label
+								>
+								<textarea
+									id="description"
+									class="form-input"
+									name="description"
+									maxlength="200"
+								></textarea>
+
+								<div id="buttons">
+									<input
+										id="cancel-button"
+										class="button large-button"
+										type="button"
+										value="Cancel"
+									/>
+									<input
+										id="save-button"
+										class="button large-button"
+										type="submit"
+										value="Save Changes"
+									/>
+								</div>
+							</div>
+							<input
+								id="delete-button"
+								class="button"
+								type="button"
+								value="Delete"
+								data-toggle="modal"
+								data-target="#confirm-del-modal"
 							/>
 						</div>
 					</div>
 				</div>
+			</form>
+		</div>
 
-				<div class="col-sm">
-					<div id="right-card" class="container-md">
-						<div id="form-card" class="section">
-							<label for="title" class="form-label">Title</label>
-							<input
-								id="title"
-								class="form-input"
-								type="text"
-								name="title"
-							/>
+		<!-- ### MODALS ###	-->
 
-							<label for="description" class="form-label"
-								>Description</label
-							>
-							<textarea
-								id="description"
-								class="form-input"
-								name="description"
-							></textarea>
-
-							<div id="buttons">
-								<input
-									class="button large-button"
-									type="button"
-									value="Cancel"
-								/>
-								<input
-									class="button large-button"
-									type="submit"
-									value="Save Changes"
-								/>
-							</div>
-						</div>
-						<input
-							id="delete-button"
-							class="button"
+		<!-- MODAL FOR NEW COMMENT -->
+		<div
+			id="confirm-del-modal"
+			class="modal fade"
+			tabindex="-1"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title"
+							>Are you sure to delete this post?</h5
+						>
+						<button
 							type="button"
-							value="Delete"
-						/>
+							id="btn-close"
+							class="btn-close"
+							data-dismiss="modal"
+							aria-label="Close"
+						>
+							<i class="fa fa-close"></i>
+						</button>
+					</div>
+					<div class="modal-footer">
+						<button
+							id="cancel-del-btn"
+							type="submit"
+							class="btn btn-danger"
+							data-dismiss="modal"
+							>Cancel</button
+						>
+						<button
+							id="confirm-del-btn"
+							type="submit"
+							class="btn btn-primary"
+							>Delete</button
+						>
 					</div>
 				</div>
 			</div>
