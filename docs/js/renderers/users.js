@@ -114,8 +114,8 @@ const userRenderer = {
 								src=${user.avatar}
 							/>
 						</a>
-						<p class="punctuation"> 300 </p>
 						<p class="comments"> 300 </p>
+						<p class="followers">${user.followers}</p>
 					</div>`;
 
 		let card = parseHTML(html);

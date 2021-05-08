@@ -112,7 +112,8 @@
 }
 
 .punctuation,
-.comments {
+.comments,
+.followers {
 	color: var(--on2);
 	margin: 1rem 2rem;
 	font-weight: bold;
@@ -199,6 +200,15 @@
 }
 
 #section-bpu {
+}
+
+/* --- */
+
+#section-bpp .comments,
+#section-mcp .punctuation,
+#section-mfu .comments,
+#section-bpu .followers {
+	display: none;
 }
 
 #section-mfu .card-image,

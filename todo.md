@@ -6,10 +6,10 @@
 
     1.  -   [x] asDetail for comments
     2.  -   [ ] asCard for users ??
-    3.  -   [ ] asMiniCard for:
+    3.  -   [x] asMiniCard for:
         1.  -   [x] photos
         2.  -   [x] users
-        3.  -   [ ] categories
+        3.  -   [x] categories
     4.  -   [x] asRow for trending
 
 -   [x] Forms validation:
