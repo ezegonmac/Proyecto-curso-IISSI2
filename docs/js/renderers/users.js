@@ -8,7 +8,7 @@ let users = [
 		surnames: "surnombres",
 		avatar: "/images/profile_photo.png",
 		tlf: 600709456,
-		followers: 234,
+		followers: 77234,
 		following: 190,
 	},
 	{
@@ -17,7 +17,43 @@ let users = [
 		surnames: "surnombres",
 		avatar: "/images/profile_photo.png",
 		tlf: 600709456,
-		followers: 234,
+		followers: 1234,
+		following: 190,
+	},
+	{
+		username: "@usuario3",
+		name: "nombre",
+		surnames: "surnombres",
+		avatar: "/images/profile_photo.png",
+		tlf: 600709456,
+		followers: 2334,
+		following: 190,
+	},
+	{
+		username: "@usuario4",
+		name: "nombre",
+		surnames: "surnombres",
+		avatar: "/images/profile_photo.png",
+		tlf: 600709456,
+		followers: 23344,
+		following: 190,
+	},
+	{
+		username: "@usuario5",
+		name: "nombre",
+		surnames: "surnombres",
+		avatar: "/images/profile_photo.png",
+		tlf: 600709456,
+		followers: 23434,
+		following: 190,
+	},
+	{
+		username: "@usuario6",
+		name: "nombre",
+		surnames: "surnombres",
+		avatar: "/images/profile_photo.png",
+		tlf: 600709456,
+		followers: 23434,
 		following: 190,
 	},
 ];
@@ -66,6 +102,25 @@ const userRenderer = {
 		return [card1, card2];
 	},
 	asCard: function (user) {},
+	asMiniCard: function (user) {
+		let html = `<div class="col-md">
+						<a class="mini-card photo-card" href="/profile.html">
+							<img
+								class="card-image"
+								src="https://source.unsplash.com/252x253"
+							/>
+							<img
+								class="big-avatar"
+								src=${user.avatar}
+							/>
+						</a>
+						<p class="punctuation"> 300 </p>
+						<p class="comments"> 300 </p>
+					</div>`;
+
+		let card = parseHTML(html);
+		return card;
+	},
 };
 
 function getUserByUsername(username) {

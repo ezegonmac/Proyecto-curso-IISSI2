@@ -164,6 +164,24 @@ const photoRenderer = {
 		let desc_card = parseHTML(html4);
 		return [title_card, img_card, val_card, desc_card];
 	},
+	asMiniCard: function (photo) {
+		let user = getUserByUsername(photo.user);
+
+		let html = `<div class="col-md">
+						<a class="mini-card photo-card" href="/photo_details.html">
+							<img
+								class="card-image"
+								src=${photo.url}
+							/>
+							<img class="avatar" src=${user.avatar} />
+						</a>
+						<p class="punctuation">${photo.valoration}</p>
+						<p class="comments">300</p>
+					</div>`;
+
+		let card = parseHTML(html);
+		return card;
+	},
 };
 
 export { photos };

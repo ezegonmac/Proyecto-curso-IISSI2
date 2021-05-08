@@ -111,7 +111,8 @@
 	align-items: center;
 }
 
-.punctuation {
+.punctuation,
+.comments {
 	color: var(--on2);
 	margin: 1rem 2rem;
 	font-weight: bold;
