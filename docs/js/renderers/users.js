@@ -1,63 +1,6 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
 
-let users = [
-	{
-		username: "@usuario1",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 77234,
-		following: 190,
-	},
-	{
-		username: "@usuario2",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 1234,
-		following: 190,
-	},
-	{
-		username: "@usuario3",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 2334,
-		following: 190,
-	},
-	{
-		username: "@usuario4",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 23344,
-		following: 190,
-	},
-	{
-		username: "@usuario5",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 23434,
-		following: 190,
-	},
-	{
-		username: "@usuario6",
-		name: "nombre",
-		surnames: "surnombres",
-		avatar: "/images/profile_photo.png",
-		tlf: 600709456,
-		followers: 23434,
-		following: 190,
-	},
-];
-
 const userRenderer = {
 	asProfile: function (user) {
 		let html1 = `<div id="profile-card" class="col-md-6">
@@ -123,16 +66,4 @@ const userRenderer = {
 	},
 };
 
-function getUserByUsername(username) {
-	for (let user of users) {
-		if (username == user.username) {
-			return user;
-		}
-	}
-	console.error("There aren't any user with this username");
-	return null;
-}
-
-export { users };
 export { userRenderer };
-export { getUserByUsername };

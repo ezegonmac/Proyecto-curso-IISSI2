@@ -2,9 +2,13 @@
 import { commentRenderer } from "/js/renderers/comments.js";
 import { photoRenderer } from "/js/renderers/photos.js";
 import { commentValidator } from "/js/validators/comments.js";
+import { photosAPI } from "/js/api/photos.js";
+import { messageRenderer } from "/js/renderers/messages.js";
 
-import { photos } from "/js/renderers/photos.js";
 import { comments } from "/js/renderers/comments.js";
+
+let urlParams = new URLSearchParams(window.location.search);
+let photoId = urlParams.get("photoId");
 
 function main() {
 	let newComForm = document.querySelector("#new-com-form");
@@ -12,23 +16,29 @@ function main() {
 
 	newComForm.onsubmit = handleSubmitNewCom;
 	modComForm.onsubmit = handleSubmitModCom;
+
+	// RENDERERS
+
+	let container1 = document.querySelector("#left-card");
+	let container2 = document.querySelector("#right-card");
+	let container3 = document.querySelector("#bottom-row");
+	photosAPI
+		.getById(photoId)
+		.then((photos) => {
+			let photo = photos[0];
+			console.log(photo);
+
+			let cards = photoRenderer.asDetail(photo);
+
+			container1.appendChild(cards[0]);
+			container1.appendChild(cards[1]);
+
+			container2.insertBefore(cards[2], container2.firstChild);
+
+			container3.appendChild(cards[3]);
+		})
+		.catch((error) => console.error(error));
 }
-
-// RENDERERS
-// - cards
-let photo = photos[0];
-
-let cards = photoRenderer.asDetail(photo);
-
-let container1 = document.querySelector("#left-card");
-container1.appendChild(cards[0]);
-container1.appendChild(cards[1]);
-
-let container2 = document.querySelector("#right-card");
-container2.insertBefore(cards[2], container2.firstChild);
-
-let container3 = document.querySelector("#bottom-row");
-container3.appendChild(cards[3]);
 
 // - comment details modal
 let comment = comments[0];

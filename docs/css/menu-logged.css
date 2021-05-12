@@ -103,6 +103,8 @@
 }
 
 #menu_login .profile-photo {
+	border: 2px solid var(--on1);
+
 	width: 8vh;
 	height: 8vh;
 

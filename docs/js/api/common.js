@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-import { sessionManager } from '../utils/session.js';
+import { sessionManager } from "../utils/session.js";
 
-const BASE_URL = "/api/v1";
+const BASE_URL = "http://localhost:8080/api/v1";
 
 const requestOptions = {
-    headers: { Token: sessionManager.getToken() },
+	headers: { Token: sessionManager.getToken() },
 };
 
 export { BASE_URL, requestOptions };

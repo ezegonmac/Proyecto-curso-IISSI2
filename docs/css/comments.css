@@ -55,10 +55,12 @@
 	width: 30%;
 }
 
-.comment > .profile-zone .profile-photo {
-	height: 25px;
-	width: 25px;
+.comment > .profile-zone .avatar {
+	height: 35px;
+	width: 35px;
 	border-radius: 50%;
+
+	border: 2px solid var(--on1);
 
 	margin: 8px;
 }
@@ -84,8 +86,8 @@
 	color: var(--on3);
 }
 
-.comment > .profile-zone .user {
-	margin: 5px 10px;
+.comment > .profile-zone .username {
+	margin: 0px 5px;
 	color: var(--on3);
 	font-style: italic;
 }

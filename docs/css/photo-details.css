@@ -144,10 +144,12 @@
 	border-radius: 50%;
 }
 
-#title-card #avatar {
-	width: 30px;
-	height: 30px;
+#title-card .avatar {
+	width: 35px;
+	height: 35px;
 	border-radius: 50%;
+
+	border: 2px solid var(--on1);
 }
 
 /* --- bottom-sections --- */

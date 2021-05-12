@@ -1,6 +1,6 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
-import { photoRenderer } from "/js/renderers/photos.js";
+import { photoRenderer, loadUsernameCard } from "/js/renderers/photos.js";
 
 const galleryRenderer = {
 	asCardGallery: function (photos) {
@@ -12,7 +12,9 @@ const galleryRenderer = {
 
 		for (let photo of photos) {
 			let card = photoRenderer.asCard(photo);
+			loadUsernameCard(card, photo.userId);
 			row.appendChild(card);
+
 			counter++;
 
 			// cada 5 imagenes por fila creamos una nueva row
@@ -21,6 +23,7 @@ const galleryRenderer = {
 				galleryContainer.appendChild(row);
 			}
 		}
+
 		return galleryContainer;
 	},
 };

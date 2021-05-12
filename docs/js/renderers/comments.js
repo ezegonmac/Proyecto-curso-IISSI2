@@ -1,24 +1,23 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
-import { getUserByUsername } from "/js/renderers/users.js";
+import { usersAPI } from "/js/api/users.js";
 
 let comments = [
 	{
 		text: "Comentario de ejemplo",
-		user: "@usuario1",
+		userId: 1,
 		rating: "4.5",
 		date: "20/06/2021",
 	},
 	{
 		text: "Comentario de ejemplo 2",
-		user: "@usuario2",
+		userId: 2,
 		rating: "1",
 		date: "20/06/2021",
 	},
 	{
-		text:
-			"Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 v  Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3",
-		user: "@usuario1",
+		text: "Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 v  Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3",
+		userId: 3,
 		rating: "3.4",
 		date: "20/06/2021",
 	},
@@ -26,7 +25,6 @@ let comments = [
 
 const commentRenderer = {
 	asCard: function (comment) {
-		let user = getUserByUsername(comment.user);
 		let rating = comment.rating;
 
 		// CALCS FOR STAR RATINGS
@@ -42,11 +40,9 @@ const commentRenderer = {
                         <div class="profile-zone">
                             <a href="profile.html">
                                 <img
-                                    class="profile-photo"
-                                    src=${user.avatar}
-                                    alt="Avatar"
+                                    class="avatar"
                                 />
-                                <p class="user">${comment.user}</p>
+                                <p class="username"></p>
                             </a>
                         </div>
 						<div class="comment-zone" 
@@ -65,10 +61,13 @@ const commentRenderer = {
                     </li>`;
 
 		let card = parseHTML(html);
+		loadUserCard(card, comment.userId);
 		return card;
 	},
 	asDetail: function (comment) {
-		let user = getUserByUsername(comment.user);
+		let user = usersAPI
+			.getById(comment.userId)
+			.catch((error) => console.error(error));
 		let rating = comment.rating;
 
 		// CALCS FOR STAR RATINGS
@@ -149,5 +148,15 @@ const commentRenderer = {
 	},
 };
 
-export { comments };
-export { commentRenderer };
+function loadUserCard(card, userId) {
+	usersAPI.getById(userId).then((users) => {
+		let user = users[0];
+		let avatar = card.querySelector("img.avatar");
+		avatar.src = user.avatar;
+
+		let username = card.querySelector("p.username");
+		username.textContent = user.username;
+	});
+}
+
+export { comments, commentRenderer, loadUserCard };
