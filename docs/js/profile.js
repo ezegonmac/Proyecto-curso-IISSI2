@@ -1,11 +1,23 @@
 "use strict";
 import { userRenderer } from "/js/renderers/users.js";
-import { users } from "/js/renderers/users.js";
+import { usersAPI } from "/js/api/users.js";
 
-let user = users[0];
+let urlParams = new URLSearchParams(window.location.search);
+let userId = urlParams.get("userId");
 
-let cards = userRenderer.asProfile(user);
+function main() {
+	usersAPI
+		.getById(userId)
+		.then((users) => {
+			let user = users[0];
 
-let container = document.querySelector("#profile-section");
-container.appendChild(cards[0]);
-container.appendChild(cards[1]);
+			let cards = userRenderer.asProfile(user);
+
+			let container = document.querySelector("#profile-section");
+			container.appendChild(cards[0]);
+			container.appendChild(cards[1]);
+		})
+		.catch((error) => console.error(error));
+}
+
+document.addEventListener("DOMContentLoaded", main);

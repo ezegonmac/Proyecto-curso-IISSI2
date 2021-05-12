@@ -26,7 +26,6 @@ function main() {
 		.getById(photoId)
 		.then((photos) => {
 			let photo = photos[0];
-			console.log(photo);
 
 			let cards = photoRenderer.asDetail(photo);
 

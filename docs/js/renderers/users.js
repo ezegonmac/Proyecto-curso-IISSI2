@@ -34,20 +34,23 @@ const userRenderer = {
 		return [card1, card2];
 	},
 	asMenuItem: function (user) {
-		let html1 = `<p class="text" >${user.username}</p>`;
-		let html2 = `<img class="profile-photo"
-                          src=${user.avatar} 
-                          alt="profile_photo">`;
+		let html = `<a id="menu_login"
+					   class="menu_text"
+					   href="profile.html?userId=${user.userId}">
 
-		let card1 = parseHTML(html1);
-		let card2 = parseHTML(html2);
+						<p class="text" >${user.username}</p>
+						<img class="profile-photo" src=${user.avatar}>
+					
+					</a>`;
 
-		return [card1, card2];
+		let card = parseHTML(html);
+
+		return card;
 	},
 	asCard: function (user) {},
 	asMiniCard: function (user) {
 		let html = `<div class="col-md">
-						<a class="mini-card photo-card" href="/profile.html">
+						<a class="mini-card photo-card" href="profile.html?userId=${photo.userId}">
 							<img
 								class="card-image"
 								src="https://source.unsplash.com/252x253"

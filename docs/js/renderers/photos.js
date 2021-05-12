@@ -32,7 +32,7 @@ const photoRenderer = {
 		}%`;
 
 		let html1 = `<div id="title-card" class="top-section">
-						<a href="profile.html">
+						<a href="profile.html?userId=${photo.userId}">
 							<img class="avatar">
 						</a>
 						<p>${photo.title}</p>
