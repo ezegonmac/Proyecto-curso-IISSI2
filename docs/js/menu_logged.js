@@ -13,7 +13,7 @@ function main() {
 			let card = userRenderer.asMenuItem(user);
 			container.appendChild(card);
 		})
-		.catch((error) => messageRenderer.showErrorMessage(error));
+		.catch((error) => console.error(error));
 }
 
 addEventListener("DOMContentLoaded", main);
