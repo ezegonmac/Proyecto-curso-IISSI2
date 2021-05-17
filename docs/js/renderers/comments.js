@@ -17,7 +17,7 @@ const commentRenderer = {
 
 		let html = `<li class="comment">
                         <div class="profile-zone">
-                            <a href="profile.html">
+                            <a href="profile.html?userId=${comment.userId}">
                                 <img
                                     class="avatar"
                                 />

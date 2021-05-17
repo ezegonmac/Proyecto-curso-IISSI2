@@ -71,7 +71,7 @@ const photoRenderer = {
 	asMiniCard: function (photo) {
 		// container
 		let html = `<div class="col-md">
-						<a class="mini-card photo-card" href="/photo_details.html">
+						<a class="mini-card photo-card" href="/photo_details.html?photoId=${photo.photoId}">
 							<img
 								class="card-image"
 								src=${photo.url}
@@ -83,14 +83,6 @@ const photoRenderer = {
 					</div>`;
 
 		let card = parseHTML(html);
-
-		// users
-		let user = usersAPI
-			.getById(photo.userId)
-			.then((users) => {
-				let user = users[0];
-			})
-			.catch((error) => messageRenderer.showErrorMessage(error));
 
 		return card;
 	},
