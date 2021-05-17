@@ -2,30 +2,9 @@
 import { parseHTML } from "/js/utils/parseHTML.js";
 import { usersAPI } from "/js/api/users.js";
 
-let comments = [
-	{
-		text: "Comentario de ejemplo",
-		userId: 1,
-		rating: "4.5",
-		date: "20/06/2021",
-	},
-	{
-		text: "Comentario de ejemplo 2",
-		userId: 2,
-		rating: "1",
-		date: "20/06/2021",
-	},
-	{
-		text: "Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 v  Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3 Comentario de ejemplo 3",
-		userId: 3,
-		rating: "3.4",
-		date: "20/06/2021",
-	},
-];
-
 const commentRenderer = {
 	asCard: function (comment) {
-		let rating = comment.rating;
+		let rating = comment.valoration;
 
 		// CALCS FOR STAR RATINGS
 		// Get percentage
@@ -49,7 +28,7 @@ const commentRenderer = {
 							 data-toggle="modal" 
 							 data-target="#com-details-modal">
 							<a>
-								<p>${comment.text}</p>
+								<p>${comment.comment}</p>
 								<div class="rating">
 									<span class="icon stars-outer">
 										<span style="width: ${starPercentageRounded}" 
@@ -159,4 +138,4 @@ function loadUserCard(card, userId) {
 	});
 }
 
-export { comments, commentRenderer, loadUserCard };
+export { commentRenderer, loadUserCard };
