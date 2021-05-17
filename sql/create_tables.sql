@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Photos;
 DROP TABLE IF EXISTS Users;
 
@@ -19,5 +20,17 @@ CREATE TABLE Photos (
 	`url` VARCHAR(250) NOT NULL,
 	`userId` INT NOT NULL,
 	`valoration` DOUBLE NOT NULL,
-	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE RESTRICT
+	`date` DATE NOT NULL,
+	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE
+);
+
+CREATE TABLE Comments (
+	`commentId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`userId` INT NOT NULL,
+	`photoId` INT NOT NULL,
+	`comment` VARCHAR(300) NOT NULL,
+	`valoration` DOUBLE NOT NULL,
+	`date` DATE NOT NULL,
+	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE,
+	FOREIGN KEY (`photoId`) REFERENCES Photos (`photoId`) ON DELETE CASCADE
 );
