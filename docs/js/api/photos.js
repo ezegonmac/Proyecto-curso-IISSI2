@@ -19,6 +19,24 @@ const photosAPI = {
 				.catch((error) => reject(error.response.data.message));
 		});
 	},
+	getAllOrderedByPunctuation: function () {
+		return new Promise(function (resolve, reject) {
+			axios
+				.get(`${BASE_URL}/photos`, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+		// TODO
+	},
+	getAllOrderedByComments: function () {
+		return new Promise(function (resolve, reject) {
+			axios
+				.get(`${BASE_URL}/photos`, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+		// TODO
+	},
 };
 
 export { photosAPI };

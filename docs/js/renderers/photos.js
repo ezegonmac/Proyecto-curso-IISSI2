@@ -69,24 +69,29 @@ const photoRenderer = {
 		return [title_card, img_card, val_card, desc_card];
 	},
 	asMiniCard: function (photo) {
-		let user = usersAPI
-			.getById(photo.userId)
-			.then((users) => users[0])
-			.catch((error) => messageRenderer.showErrorMessage(error));
-
+		// container
 		let html = `<div class="col-md">
 						<a class="mini-card photo-card" href="/photo_details.html">
 							<img
 								class="card-image"
 								src=${photo.url}
 							/>
-							<img class="avatar" src=${user.avatar} />
+							<img class="avatar"/>
 						</a>
 						<p class="punctuation">${photo.valoration}</p>
 						<p class="comments">300</p>
 					</div>`;
 
 		let card = parseHTML(html);
+
+		// users
+		let user = usersAPI
+			.getById(photo.userId)
+			.then((users) => {
+				let user = users[0];
+			})
+			.catch((error) => messageRenderer.showErrorMessage(error));
+
 		return card;
 	},
 };

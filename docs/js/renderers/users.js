@@ -50,7 +50,7 @@ const userRenderer = {
 	asCard: function (user) {},
 	asMiniCard: function (user) {
 		let html = `<div class="col-md">
-						<a class="mini-card photo-card" href="profile.html?userId=${photo.userId}">
+						<a class="mini-card photo-card" href="profile.html?userId=${user.userId}">
 							<img
 								class="card-image"
 								src="https://source.unsplash.com/252x253"
