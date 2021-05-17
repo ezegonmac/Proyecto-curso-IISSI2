@@ -19,23 +19,29 @@ const photosAPI = {
 				.catch((error) => reject(error.response.data.message));
 		});
 	},
-	getAllOrderedByPunctuation: function () {
+	getAllFromUser: function (userId) {
 		return new Promise(function (resolve, reject) {
 			axios
-				.get(`${BASE_URL}/photos`, requestOptions)
+				.get(`${BASE_URL}/photos?userId=${userId}`, requestOptions)
 				.then((response) => resolve(response.data))
 				.catch((error) => reject(error.response.data.message));
 		});
-		// TODO
+	},
+	getAllOrderedByPunctuation: function () {
+		return new Promise(function (resolve, reject) {
+			axios
+				.get(`${BASE_URL}/photos/valoration`, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
 	},
 	getAllOrderedByComments: function () {
 		return new Promise(function (resolve, reject) {
 			axios
-				.get(`${BASE_URL}/photos`, requestOptions)
+				.get(`${BASE_URL}/photos/comments`, requestOptions)
 				.then((response) => resolve(response.data))
 				.catch((error) => reject(error.response.data.message));
 		});
-		// TODO
 	},
 };
 

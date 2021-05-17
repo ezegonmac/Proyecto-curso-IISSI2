@@ -79,7 +79,7 @@ const photoRenderer = {
 							<img class="avatar"/>
 						</a>
 						<p class="punctuation">${photo.valoration}</p>
-						<p class="comments">300</p>
+						<p class="comments">${photo.comments}</p>
 					</div>`;
 
 		let card = parseHTML(html);

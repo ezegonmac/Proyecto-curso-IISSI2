@@ -10,7 +10,8 @@ CREATE TABLE Users (
 	`avatar` VARCHAR(250),
 	`phone` INT,
 	`followers` INT DEFAULT 0,
-	`following` INT DEFAULT 0
+	`following` INT DEFAULT 0,
+	`valoration` DOUBLE DEFAULT 0
 );
 
 CREATE TABLE Photos (
@@ -20,7 +21,8 @@ CREATE TABLE Photos (
 	`url` VARCHAR(250) NOT NULL,
 	`userId` INT NOT NULL,
 	`valoration` DOUBLE NOT NULL,
-	`date` DATE NOT NULL,
+	`date` DATETIME NOT NULL,
+	`comments` INT DEFAULT 0,
 	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE
 );
 
@@ -30,7 +32,7 @@ CREATE TABLE Comments (
 	`photoId` INT NOT NULL,
 	`comment` VARCHAR(300) NOT NULL,
 	`valoration` DOUBLE NOT NULL,
-	`date` DATE NOT NULL,
+	`date` DATETIME NOT NULL,
 	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE,
 	FOREIGN KEY (`photoId`) REFERENCES Photos (`photoId`) ON DELETE CASCADE
 );

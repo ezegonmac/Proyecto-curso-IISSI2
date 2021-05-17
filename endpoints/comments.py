@@ -15,5 +15,5 @@ def get_all():
     method="GET",
     sql="SELECT * FROM comments WHERE photoId = $photoId"
 )
-def get_by_id():
+def get_by_photo_id():
     pass

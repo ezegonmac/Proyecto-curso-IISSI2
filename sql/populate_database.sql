@@ -33,8 +33,8 @@ INSERT INTO Photos (
 	`date`
 )
 	VALUES
-	(1,'titulo1','descripcion1','./images/posts/p0.jpg',1,4.5,'2020-01-01'),
-	(2,'titulo2','descripcion2','./images/posts/p2.jpg',2,1.5,'2020-01-01'),
+	(1,'titulo1','descripcion1','./images/posts/p0.jpg',1,4.5,'2019-08-01'),
+	(2,'titulo2','descripcion2','./images/posts/p2.jpg',1,1.5,'2018-01-01'),
 	(3,'titulo3','descripcion3','./images/posts/p3.jpg',3,4.0,'2020-01-01'),
 	(4,'titulo4','descripcion4','./images/posts/p4.jpg',4,3.5,'2020-01-01'),
 	(5,'titulo5','descripcion5','./images/posts/p5.jpg',5,1.5,'2020-01-01'),
@@ -45,7 +45,7 @@ INSERT INTO Photos (
 	(10,'titulo10','descripcion10','./images/posts/p10.jpg',10,5.0,'2020-01-01'),
 	(11,'titulo11','descripcion11','./images/posts/p11.jpg',11,4.5,'2020-01-01'),
 	(12,'titulo12','descripcion12','./images/posts/p12.jpg',12,4.1,'2020-01-01'),
-	(13,'titulo13','descripcion13','./images/posts/p13.jpg',1,3.0,'2020-01-01'),
+	(13,'titulo13','descripcion13','./images/posts/p13.jpg',1,3.0,'2020-06-06'),
 	(14,'titulo14','descripcion14','./images/posts/p14.jpg',4,4.5,'2020-01-01'),
 	(15,'titulo15','descripcion15','./images/posts/p15.jpg',5,1.5,'2020-01-01'),
 	(16,'titulo16','descripcion16','./images/posts/p16.jpg',10,0.5,'2020-01-01'),

@@ -60,7 +60,7 @@ const userRenderer = {
 								src=${user.avatar}
 							/>
 						</a>
-						<p class="comments"> 300 </p>
+						<p class="comments">${user.valoration}</p>
 						<p class="followers">${user.followers}</p>
 					</div>`;
 
