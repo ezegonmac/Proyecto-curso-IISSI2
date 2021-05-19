@@ -20,4 +20,13 @@ function main() {
 		.catch((error) => console.error(error));
 }
 
+// BUTTONS
+
+// - close-session-button
+let closeSesBtn = document.querySelector("#close-button");
+closeSesBtn.onclick = function () {
+	let form = document.querySelector("#new-com-form");
+	window.location.assign("/feed.html");
+};
+
 document.addEventListener("DOMContentLoaded", main);

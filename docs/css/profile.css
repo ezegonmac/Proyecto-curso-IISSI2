@@ -152,6 +152,20 @@ body {
 	outline: none;
 }
 
+.large-button {
+	width: 130px;
+}
+
+.large-button:hover {
+	width: 140px;
+}
+
+#close-button {
+	color: white;
+	background-color: var(--error);
+	margin-right: 100px;
+}
+
 #followers-card .value {
 	color: rgb(224, 224, 224);
 	font-weight: normal;
@@ -168,4 +182,12 @@ body {
 
 .photo-card .avatar {
 	display: none;
+}
+
+/* close-session-section */
+
+#close-session-section {
+	display: flex;
+	justify-content: flex-end;
+	background-color: var(--background);
 }
