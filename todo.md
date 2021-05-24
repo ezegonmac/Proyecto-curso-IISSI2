@@ -29,5 +29,12 @@
     5.  -   [x] PHOTOS (post, put, delete)
 
 -   [ ] js/api
+
     1.  -   [x] USERS (post, put, delete) (c/p Practica 7)
     2.  -   [x] PHOTOS (post, put, delete) (c/p Practica 7)
+
+-   [ ] Forms
+    1.  -   [x] Post_photo
+    2.  -   [ ] Modify_photo
+    3.  -   [ ] Login
+    4.  -   [ ] Register

@@ -20,9 +20,10 @@ CREATE TABLE Photos (
 	`description` VARCHAR(250),
 	`url` VARCHAR(250) NOT NULL,
 	`userId` INT NOT NULL,
-	`valoration` DOUBLE NOT NULL,
-	`date` DATETIME NOT NULL,
+	`valoration` DOUBLE DEFAULT 0 NOT NULL,
+	`date` DATETIME DEFAULT NOW() NOT NULL,
 	`comments` INT DEFAULT 0,
+	`visibility` BOOLEAN DEFAULT 1,
 	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE
 );
 

@@ -28,7 +28,9 @@
 		<script src="/js/libs/bootstrap.min.js"></script>
 
 		<script src="js/utils/include.js"></script>
+		<script src="js/post_photo.js" type="module"></script>
 		<script src="js/menu_logged.js" type="module"></script>
+		<script src="js/libs/axios.min.js"></script>
 
 		<title>Post Photo</title>
 	</head>
@@ -48,11 +50,19 @@
 							</div>
 
 							<div id="upload-card" class="bottom-section">
-								<input
+								// TODO
+								<!-- <input
 									id="file-button"
 									type="file"
 									name="image"
 									class="form-control"
+								/> -->
+								<input
+									id="url-button"
+									type="url"
+									name="url"
+									class="form-control"
+									value="https://source.unsplash.com/270x270"
 									required
 								/>
 							</div>
