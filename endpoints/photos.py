@@ -28,6 +28,26 @@ def get_by_id():
 def get_by_user_id():
     pass
 
+################################################################################
+
+@endpoint(
+    route="/photos/valoration",
+    method="GET",
+    sql="SELECT * FROM Photos ORDER BY valoration DESC"
+)
+def get_all_ordered_by_valoration():
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/photos/comments",
+    method="GET",
+    sql="SELECT * FROM Photos ORDER BY comments DESC"
+)
+def get_all_ordered_by_comments():
+    pass
+
 ###############################################################################
 
 @endpoint(
@@ -62,24 +82,4 @@ def update(title, description, url, visibility):
     auth_required=True,
 )
 def delete():
-    pass
-
-###############################################################################
-
-@endpoint(
-    route="/photos/valoration",
-    method="GET",
-    sql="SELECT * FROM Photos ORDER BY valoration DESC"
-)
-def get_all_ordered_by_valoration():
-    pass
-
-###############################################################################
-
-@endpoint(
-    route="/photos/comments",
-    method="GET",
-    sql="SELECT * FROM Photos ORDER BY comments DESC"
-)
-def get_all_ordered_by_comments():
     pass

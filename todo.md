@@ -21,6 +21,13 @@
     5.  -   [x] Modify Photo
 
 -   [ ] Endpoints
+
     1.  -   [x] Posts from account
     2.  -   [x] Trending
     3.  -   [x] Feed (Last posted photos)
+    4.  -   [x] USER (post, put, delete)
+    5.  -   [x] PHOTOS (post, put, delete)
+
+-   [ ] js/api
+    1.  -   [x] USERS (post, put, delete) (c/p Practica 7)
+    2.  -   [x] PHOTOS (post, put, delete) (c/p Practica 7)
