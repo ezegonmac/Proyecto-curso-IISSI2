@@ -30,7 +30,7 @@ function handleSubmitForm(event) {
 
 	// TODO  Add the current user ID
 	formData.append("userId", 1);
-	console.log(formData.forEach((v) => console.log(v)));
+	//console.log(formData.forEach((v) => console.log(v)));
 	photosAPI
 		.create(formData)
 		.then((data) => {

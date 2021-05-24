@@ -184,7 +184,13 @@
 	right: 20%;
 }
 
+#photo-card {
+	overflow: hidden;
+}
+
 .full-photo {
+	max-width: 250px;
+	max-height: 250px;
 	margin: 1rem;
 }
 

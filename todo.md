@@ -35,6 +35,6 @@
 
 -   [ ] Forms
     1.  -   [x] Post_photo
-    2.  -   [ ] Modify_photo
+    2.  -   [x] Modify_photo
     3.  -   [ ] Login
     4.  -   [ ] Register
