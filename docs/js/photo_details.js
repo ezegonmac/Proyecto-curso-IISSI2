@@ -9,60 +9,91 @@ let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
 
 function main() {
-	console.log("joad");
+	photosAPI
+		.getById(photoId)
+		.then((photos) => {
+			// RENDERERS
+			renderPhotoDetails(photos);
+			renderCommentsDetails();
 
-	// SUBMIT
+			// BUTTONS
+			renderModComBtn();
+			renderNewComSubmit();
+			renderModPhotoBtn();
+		})
+		.catch((error) => console.error(error));
+
+	// new comment form
 	let newComForm = document.querySelector("#new-com-form");
-	let modComForm = document.querySelector("#mod-com-form");
-
 	newComForm.onsubmit = handleSubmitNewCom;
-	modComForm.onsubmit = handleSubmitModCom;
+}
+// RENDERERS
+
+function renderPhotoDetails(photos) {
+	let photo = photos[0];
+
+	let cards = photoRenderer.asDetail(photo);
+
+	// containers
+	let container1 = document.querySelector("#left-card");
+	let container2 = document.querySelector("#right-card");
+	let container3 = document.querySelector("#bottom-row");
+
+	container1.appendChild(cards[0]);
+	container1.appendChild(cards[1]);
+
+	container2.insertBefore(cards[2], container2.firstChild);
+
+	container3.appendChild(cards[3]);
 }
 
-// RENDERERS
-let container1 = document.querySelector("#left-card");
-let container2 = document.querySelector("#right-card");
-let container3 = document.querySelector("#bottom-row");
+function renderCommentsDetails() {
+	// - comment details modal
+	let comment = comments[0];
+	//evita que se renderizen comentarios si no hay ninguno
+	if (comment != undefined && comment != null) {
+		let card = commentRenderer.asDetail(comment);
 
-photosAPI
-	.getById(photoId)
-	.then((photos) => {
-		let photo = photos[0];
+		let container4 = document.querySelector("#com-details-modal-container");
+		container4.appendChild(card);
 
-		let cards = photoRenderer.asDetail(photo);
-
-		container1.appendChild(cards[0]);
-		container1.appendChild(cards[1]);
-
-		container2.insertBefore(cards[2], container2.firstChild);
-
-		container3.appendChild(cards[3]);
-	})
-	.catch((error) => console.error(error));
-
-// - comment details modal
-let comment = comments[0];
-
-let card = commentRenderer.asDetail(comment);
-
-let container4 = document.querySelector("#com-details-modal-container");
-container4.appendChild(card);
+		// boton de modificar comentario
+		let modComForm = document.querySelector("#mod-com-form");
+		modComForm.onsubmit = handleSubmitModCom;
+	}
+}
 
 // BUTTONS
 
 // - new comment submit
-let newComBtn = document.querySelector("#new-com-btn");
-newComBtn.onclick = function () {
-	let form = document.querySelector("#new-com-form");
-	form.submit();
-};
+function renderNewComSubmit() {
+	let newComBtn = document.querySelector("#new-com-btn");
+	newComBtn.onclick = function () {
+		let form = document.querySelector("#new-com-form");
+		form.submit();
+	};
+}
 
 // - mod comment submit
-let modComBtn = document.querySelector("#mod-com-btn");
-modComBtn.onclick = function () {
-	let form = document.querySelector("#mod-com-form");
-	form.submit();
-};
+function renderModComBtn() {
+	let comment = comments[0];
+	//evita que se renderize el boton si no hay ningun comentario
+	if (comment != undefined && comment != null) {
+		let modComBtn = document.querySelector("#mod-com-btn");
+		modComBtn.onclick = function () {
+			let form = document.querySelector("#mod-com-form");
+			form.submit();
+		};
+	}
+}
+
+// - mod photo
+function renderModPhotoBtn() {
+	let modPhotoBtn = document.querySelector("#mod-photo-button");
+	modPhotoBtn.onclick = function () {
+		window.location.assign(`/modify_photo.html?photoId=${photoId}`);
+	};
+}
 
 // VALIDATORS
 
