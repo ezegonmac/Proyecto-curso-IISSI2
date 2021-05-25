@@ -5,7 +5,7 @@ const userValidator = {
 		let errors = [];
 
 		let username = formData.get("username");
-		let name = formData.get("firstName");
+		let name = formData.get("name");
 		let surnames = formData.get("surnames");
 		let passwd = formData.get("password");
 		let passwd2 = formData.get("c-password");

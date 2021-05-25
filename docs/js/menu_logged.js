@@ -1,12 +1,15 @@
 "use strict";
 import { userRenderer } from "/js/renderers/users.js";
 import { usersAPI } from "/js/api/users.js";
+import { sessionManager } from "/js/utils/session.js";
 
 function main() {
 	let container = document.querySelector(".menu_right");
 
+	let userId = sessionManager.getLoggedUser().userId;
+
 	usersAPI
-		.getById(1)
+		.getById(userId)
 		.then((users) => {
 			let user = users[0];
 

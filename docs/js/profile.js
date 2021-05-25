@@ -1,6 +1,7 @@
 "use strict";
 import { userRenderer } from "/js/renderers/users.js";
 import { usersAPI } from "/js/api/users.js";
+import { sessionManager } from "/js/utils/session.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let userId = urlParams.get("userId");
@@ -44,7 +45,7 @@ function renderNewPostBtn() {
 function renderCloseSesBtn() {
 	let closeSesBtn = document.querySelector("#close-button");
 	closeSesBtn.onclick = function () {
-		let form = document.querySelector("#new-com-form");
+		sessionManager.logout();
 		window.location.assign("/feed.html");
 	};
 }

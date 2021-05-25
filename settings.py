@@ -30,11 +30,11 @@ API_PREFIX = "/api/v1"
 # Table and fields that are used for both login and register
 # Uncomment this and set up your own table and columns:
 
-#USER_AUTH_DATA = {
-#    "table": "Employees",
-#    "identifier": "email",
-#    "password": "password",
-#}
+USER_AUTH_DATA = {
+    "table": "Users",
+    "identifier": "username",
+    "password": "password",
+}
 
 # A random string that is used for security purposes
 # (this has been generated automatically upon project creation)

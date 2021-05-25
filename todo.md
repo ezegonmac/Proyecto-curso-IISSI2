@@ -37,4 +37,4 @@
     1.  -   [x] Post_photo
     2.  -   [x] Modify_photo
     3.  -   [ ] Login
-    4.  -   [ ] Register
+    4.  -   [x] Register
