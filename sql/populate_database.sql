@@ -38,6 +38,19 @@ INSERT INTO Users (
 	(29, 'albagm3', 'Alba3', 'Gonzalez Macho',  './images/avatars/pf28.jpg', 654567839),
 	(30, 'albagm4', 'Alba4', 'Gonzalez Macho',  './images/avatars/pf29.jpg', 654567839),
 	(31, 'albagm5', 'Alba5', 'Gonzalez Macho',  './images/avatars/pf30.jpg', 654567839);
+	
+INSERT INTO USERS (
+	`userId`,
+	`username`,
+	`name`,
+	`surnames`,
+	`avatar`,
+	`password`,
+	`email`,
+	`phone`
+)
+VALUES 
+	(32, 'ezegonmac2', 'Ezequiel', 'Macho', './images/profile_photo.png', 'pbkdf2:sha256:150000$mkyP4LPf$1dbe7d01b040aedca49310885aed1f66079b8dddca7fe7d133825e6f696af244', 'ezquielgon2@gmail.com', 626425195);	
 
 
 INSERT INTO Photos (
@@ -220,7 +233,7 @@ VALUES
 		(14,2 ,6),
 		(15,3 ,1),
 		(16,3 ,2),
-		(17,3 ,3),
+		(17,3 ,20),
 		(18,3 ,4),
 		(19,3 ,5),
 		(20,3 ,6),

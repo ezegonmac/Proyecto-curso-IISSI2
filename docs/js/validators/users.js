@@ -29,6 +29,10 @@ const userValidator = {
 
 		return errors;
 	},
+	validateLogin: function (formData) {
+		let errors = [];
+		return errors;
+	},
 };
 
 export { userValidator };

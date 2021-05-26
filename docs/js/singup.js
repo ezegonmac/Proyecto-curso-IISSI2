@@ -6,15 +6,15 @@ import { sessionManager } from "/js/utils/session.js";
 import { authAPI } from "/js/api/auth.js";
 
 function main() {
+	// FORM
+	let form = document.querySelector("#form");
 	form.onsubmit = handleSubmitRegister;
 }
 
-let form = document.querySelector("#form");
 let btn = document.querySelector("#submit-btn");
 
 /* submit button */
 btn.onClick = function () {
-	console.log("jola");
 	// window.open("http://localhost:8080/login.html");
 };
 
@@ -43,6 +43,7 @@ function sendRegister(formData) {
 	authAPI
 		.register(formData)
 		.then((loginData) => {
+			// Successful register
 			let sessionToken = loginData.sessionToken;
 			let loggedUser = loginData.user;
 			sessionManager.login(sessionToken, loggedUser);
