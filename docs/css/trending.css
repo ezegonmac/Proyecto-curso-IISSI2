@@ -113,7 +113,8 @@
 
 .punctuation,
 .comments,
-.followers {
+.followers,
+.times_used {
 	color: var(--on2);
 	margin: 1rem 2rem;
 	font-weight: bold;
@@ -213,6 +214,14 @@
 #section-mfu .comments,
 #section-bpu .followers {
 	display: none;
+}
+
+#section-bpp .punctuation,
+#section-bpu .comments {
+	max-width: 3em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #section-mfu .card-image,

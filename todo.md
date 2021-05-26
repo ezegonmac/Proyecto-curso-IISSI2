@@ -33,8 +33,14 @@
     1.  -   [x] USERS (post, put, delete) (c/p Practica 7)
     2.  -   [x] PHOTOS (post, put, delete) (c/p Practica 7)
 
--   [ ] Forms
+-   [x] Forms
+
     1.  -   [x] Post_photo
     2.  -   [x] Modify_photo
-    3.  -   [ ] Login
+    3.  -   [x] Login
     4.  -   [x] Register
+
+-   [ ] Trending
+    1.  -   [ ] Categories
+    2.  -   [x] Punctuation Users
+    3.  -   [x] Comments Posts

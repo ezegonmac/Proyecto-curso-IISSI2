@@ -17,9 +17,9 @@ FOR EACH ROW
 END //
 DELIMITER ;
 
--- update followers
+-- insert followers
 DELIMITER //
-CREATE OR REPLACE TRIGGER triggerUpdateFollowers
+CREATE OR REPLACE TRIGGER triggerInsertFollowers
 AFTER INSERT ON Followers
 FOR EACH ROW
 BEGIN
@@ -55,9 +55,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- insert photo valoration
+-- insert comment valoration
 DELIMITER //
-CREATE OR REPLACE TRIGGER triggerInsertPhotoValoration
+CREATE OR REPLACE TRIGGER triggerInsertCommentValoration
 AFTER INSERT ON Comments
 FOR EACH ROW
 BEGIN
@@ -74,5 +74,42 @@ BEGIN
 	SET `newValoration` = `valorationsSum` / `n`;
 	
 	UPDATE Photos P SET P.`valoration`=`newValoration` WHERE P.photoId = new.photoId;
+END //
+DELIMITER ;
+
+-- update photo valoration
+DELIMITER //
+CREATE OR REPLACE TRIGGER triggerUpdatePhotoValoration
+AFTER UPDATE ON Photos
+FOR EACH ROW
+BEGIN
+	DECLARE `valorationsSum` DOUBLE;
+	DECLARE `n` INT;
+	DECLARE `newValoration` DOUBLE;
+	
+	SET `valorationsSum` = (SELECT SUM(P.valoration) FROM Photos P WHERE P.userId = new.userId);
+	SET `n` = (SELECT COUNT(*) FROM Photos P WHERE P.userId = new.userId);
+	
+	SET `valorationsSum` = `valorationsSum` + new.valoration;
+	SET `n` = `n` + 1;
+	
+	SET `newValoration` = `valorationsSum` / `n`;
+	
+	UPDATE Users U SET U.`valoration`=`newValoration` WHERE U.userId = new.userId;
+END //
+DELIMITER ;
+
+-- insert number of comments
+DELIMITER //
+CREATE OR REPLACE TRIGGER triggerInsertComments
+AFTER INSERT ON Comments
+FOR EACH ROW
+BEGIN
+	DECLARE n INT;
+	SET n = (SELECT P.`comments` FROM Photos P WHERE P.photoId = new.photoId);
+
+	SET n = n + 1;
+	
+	UPDATE Photos P SET P.`comments`=`n` WHERE photoId = new.photoId;
 END //
 DELIMITER ;
