@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS InapropiateWords;
 DROP TABLE IF EXISTS Followers;
-DROP TABLE PhotosCategories;
+DROP TABLE IF EXISTS PhotosCategories;
 DROP TABLE IF EXISTS Categories;
 DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Photos;
@@ -13,7 +13,7 @@ CREATE TABLE Users (
 	`surnames` VARCHAR(50) NOT NULL,
 	`avatar` VARCHAR(250) DEFAULT "./images/profile_photo.png",
 	`password` VARCHAR(250),
-	`email` VARCHAR(100),
+	`email` VARCHAR(100) UNIQUE,
 	`phone` INT,
 	`followers` INT DEFAULT 0,
 	`following` INT DEFAULT 0,
@@ -40,7 +40,7 @@ CREATE TABLE Comments (
 	`photoId` INT NOT NULL,
 	`comment` VARCHAR(300) NOT NULL,
 	`valoration` DOUBLE NOT NULL,
-	`date` DATETIME NOT NULL,
+	`date` DATETIME DEFAULT NOW() NOT NULL,
 	FOREIGN KEY (`userId`) REFERENCES Users (`userId`) ON DELETE CASCADE,
 	FOREIGN KEY (`photoId`) REFERENCES Photos (`photoId`) ON DELETE CASCADE,
 	UNIQUE (`userId`, `photoId`)
@@ -58,7 +58,6 @@ CREATE TABLE PhotosCategories (
 	FOREIGN KEY (`photoId`) REFERENCES Photos (`photoId`) ON DELETE CASCADE,
 	FOREIGN KEY (`categorieId`) REFERENCES Categories (`categorieId`) ON DELETE CASCADE,
 	UNIQUE (`photoId`, `categorieId`)
-	
 );
 
 CREATE TABLE Followers (
@@ -67,7 +66,8 @@ CREATE TABLE Followers (
 	`followingId` INT NOT NULL,
 	FOREIGN KEY (`followerId`) REFERENCES Users (`userId`) ON DELETE CASCADE,
 	FOREIGN KEY (`followingId`) REFERENCES Users (`userId`) ON DELETE CASCADE,
-	UNIQUE (`followerId`, `followingId`)
+	UNIQUE (`followerId`, `followingId`),
+	CONSTRAINT selfFollow CHECK (followerId != followingId)
 );
 
 CREATE TABLE InapropiateWords (

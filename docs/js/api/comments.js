@@ -26,7 +26,34 @@ const commentsAPI = {
 				.then((response) => resolve(response.data))
 				.catch((error) => reject(error.response.data.message));
 		});
-		// TODO
+	},
+	create: function (formData) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.post(`${BASE_URL}/comments`, formData, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+	},
+	update: function (commentId, formData) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.put(
+					`${BASE_URL}/comments/${commentId}`,
+					formData,
+					requestOptions
+				)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+	},
+	delete: function (commentId) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.delete(`${BASE_URL}/comments/${commentId}`, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
 	},
 };
 

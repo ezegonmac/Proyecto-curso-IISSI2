@@ -25,7 +25,7 @@ const userRenderer = {
                                 <p class="value">${user.following}</p>
                             </div>
                         </div>
-                        <button class="button">Follow</button>
+                        <button id="follow-btn" class="button">Follow</button>
                     </div>`;
 
 		let card1 = parseHTML(html1);

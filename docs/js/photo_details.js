@@ -3,7 +3,9 @@ import { commentRenderer } from "/js/renderers/comments.js";
 import { photoRenderer } from "/js/renderers/photos.js";
 import { commentValidator } from "/js/validators/comments.js";
 import { photosAPI } from "/js/api/photos.js";
+import { commentsAPI } from "/js/api/comments.js";
 import { messageRenderer } from "/js/renderers/messages.js";
+import { sessionManager } from "/js/utils/session.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -12,13 +14,18 @@ function main() {
 	photosAPI
 		.getById(photoId)
 		.then((photos) => {
+			let photo = photos[0];
+
 			// RENDERERS
-			renderPhotoDetails(photos);
-			renderCommentsDetails();
+			renderPhotoDetails(photo);
+			// TODO
+			//renderCommentsDetails();
+
+			hideActions(photo.userId);
 
 			// BUTTONS
 			renderModComBtn();
-			renderNewComSubmit();
+			//renderNewComSubmit();
 			renderModPhotoBtn();
 		})
 		.catch((error) => console.error(error));
@@ -26,12 +33,14 @@ function main() {
 	// new comment form
 	let newComForm = document.querySelector("#new-com-form");
 	newComForm.onsubmit = handleSubmitNewCom;
+
+	// new comment form
+	// let modComForm = document.querySelector("#mod-com-form");
+	// modComForm.onsubmit = handleSubmitModCom;
 }
 // RENDERERS
 
-function renderPhotoDetails(photos) {
-	let photo = photos[0];
-
+function renderPhotoDetails(photo) {
 	let cards = photoRenderer.asDetail(photo);
 
 	// containers
@@ -45,6 +54,15 @@ function renderPhotoDetails(photos) {
 	container2.insertBefore(cards[2], container2.firstChild);
 
 	container3.appendChild(cards[3]);
+}
+
+function hideActions(photoOwnerId) {
+	let actions_container = document.querySelector(".button-container");
+
+	let userId = sessionManager.getLoggedUser().userId;
+	if (userId != photoOwnerId) {
+		actions_container.style.display = "none";
+	}
 }
 
 function renderCommentsDetails() {
@@ -66,13 +84,14 @@ function renderCommentsDetails() {
 // BUTTONS
 
 // - new comment submit
-function renderNewComSubmit() {
-	let newComBtn = document.querySelector("#new-com-btn");
-	newComBtn.onclick = function () {
-		let form = document.querySelector("#new-com-form");
-		form.submit();
-	};
-}
+// function renderNewComSubmit() {
+// 	let newComBtn = document.querySelector("#new-com-btn");
+// 	newComBtn.onclick = function () {
+// 		console.log("hola");
+// 		let newComForm = document.querySelector("#new-com-form");
+// 		newComForm.submit();
+// 	};
+// }
 
 // - mod comment submit
 function renderModComBtn() {
@@ -95,7 +114,7 @@ function renderModPhotoBtn() {
 	};
 }
 
-// VALIDATORS
+// FORMS
 
 // - new comment
 function handleSubmitNewCom(event) {
@@ -104,7 +123,7 @@ function handleSubmitNewCom(event) {
 	let form = event.target;
 	let formData = new FormData(form);
 
-	let errors = commentValidator.validateNewComment(formData);
+	let errors = commentValidator.validateModifyComment(formData);
 
 	/* Show errors in doc */
 	if (errors.length > 0) {
@@ -114,6 +133,20 @@ function handleSubmitNewCom(event) {
 			messageRenderer.showErrorMessage(error);
 		}
 	}
+
+	// Add the current user ID
+	formData.append("userId", sessionManager.getLoggedId());
+	formData.append("photoId", photoId);
+	for (var value of formData.keys()) {
+		console.log(value);
+		console.log(formData.get(value));
+	}
+	commentsAPI
+		.create(formData)
+		.then((data) => {
+			window.location.assign(`/photo_details.html?photoId=` + photoId);
+		})
+		.catch((error) => console.error(error));
 }
 
 // - modify comment

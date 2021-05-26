@@ -28,8 +28,8 @@ function handleSubmitForm(event) {
 	let form = event.target;
 	let formData = new FormData(form);
 
-	// TODO  Add the current user ID
-	formData.append("userId", 1);
+	// Add the current user ID
+	formData.append("userId", sessionManager.getLoggedId());
 	//console.log(formData.forEach((v) => console.log(v)));
 	photosAPI
 		.create(formData)

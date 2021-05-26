@@ -18,6 +18,7 @@ DB_CONN = {
 # be ran when the 'silence createdb' command is issued
 SQL_SCRIPTS = [
     "create_tables.sql",
+    "create_triggers_and_procedures.sql",
     "populate_database.sql"
 ]
 

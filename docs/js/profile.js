@@ -12,6 +12,8 @@ function main() {
 		.then((users) => {
 			// RENDERERS
 			renderUserProfile(users);
+
+			hideActions(userId);
 		})
 		.catch((error) => console.error(error));
 
@@ -29,6 +31,15 @@ function renderUserProfile(users) {
 	let container = document.querySelector("#profile-section");
 	container.appendChild(cards[0]);
 	container.appendChild(cards[1]);
+}
+
+function hideActions(profileOwnerId) {
+	let actions_container = document.querySelector("#follow-btn");
+
+	let loggedUserId = sessionManager.getLoggedUser().userId;
+	if (loggedUserId == profileOwnerId) {
+		actions_container.style.display = "none";
+	}
 }
 
 // BUTTONS

@@ -24,9 +24,9 @@ const commentRenderer = {
                                 <p class="username"></p>
                             </a>
                         </div>
-						<div class="comment-zone" 
-							 data-toggle="modal" 
-							 data-target="#com-details-modal">
+						<div class="comment-zone">
+						<!-- data-toggle="modal" 
+							 data-target="#com-details-modal" -->
 							<a>
 								<p>${comment.comment}</p>
 								<div class="rating">

@@ -4,42 +4,40 @@ INSERT INTO Users (
 	`name`,
 	`surnames`,
 	`avatar`,
-	`phone`,
-	`followers`,
-	`following`
+	`phone`
 )
     VALUES
-	(1, 'maria_rc', 'Maria', 'Romero Camacho', './images/avatars/pf0.jpg', 654567839, 78, 124),
-	(2, 'juanms01', 'Juan', 'Macho Sanchez', './images/avatars/pf1.jpg', 654567839, 48, 62),
-	(3, 'pjm1', 'Pedro', 'Camacho Oliva', './images/avatars/pf2.jpg', 654567839, 18, 71),
-	(4, 'john99', 'Jhon', 'Gibson Gonzalez', './images/avatars/pf3.jpg', 654567839, 8, 30),
-	(5, 'mari_', 'Maria', 'Magdalena Ramirez', './images/avatars/pf4.jpg', 654567839, 118, 110),
-	(6, 'ivangrm', 'Ivan', 'Gallardo Retamal', './images/avatars/pf5.jpg', 654567839, 780, 120),
-	(7, 'rob80', 'Robert', 'Marin Montes', './images/avatars/pf6.jpg', 654567839, 2, 120),
-	(8, 'jiaopin', 'Jiao', 'Ping Ho', './images/avatars/pf7.jpg', 654567839, 123, 23),
-	(9, 'se_is', 'Sheila', 'Rodriguez Benitez', './images/avatars/pf8.jpg', 654567839, 235, 2),
-	(10, 'sabrinacp', 'Sabrina', 'Carpenter Peterson', './images/avatars/pf9.jpg', 654567839, 500, 560),
-	(11, 'Macmacvic', 'Macarena', 'Castro Garcia', './images/avatars/pf10.jpg', 654567839, 7, 10),
-	(12, 'ezegonmac', 'Ezequiel', 'Gonzalez Macho', './images/avatars/pf11.jpg', 654567839, 80, 20),
-	(13, 'albagm0', 'Alba', 'Gonzalez Macho', './images/avatars/pf12.jpg', 654567839, 78, 124),
-	(14, 'AleDJ', 'Alejandro', 'Helios Camacho', './images/avatars/pf13.jpg', 654567839, 781, 124),
-	(15, 'martamm2001', 'Marta', 'Muñoz Macho', './images/avatars/pf14.jpg', 654567839, 72, 124),
-	(16, 'HannaG', 'Hanna', 'Gutierrez Marin', './images/avatars/pf15.jpg', 654567839, 83, 124),
-	(17, 'AleDJ0', 'Alejandro0', 'Helios Camacho', './images/avatars/pf16.jpg', 654567839, 8, 124),
-	(18, 'AleDJ1', 'Alejandro1', 'Helios Camacho', './images/avatars/pf17.jpg', 654567839, 8, 124),
-	(19, 'AleDJ2', 'Alejandro2', 'Helios Camacho', './images/avatars/pf18.jpg', 654567839, 18, 124),
-	(20, 'AleDJ3', 'Alejandro3', 'Helios Camacho', './images/avatars/pf19.jpg', 654567839, 28, 14),
-	(21, 'AleDJ4', 'Alejandro4', 'Helios Camacho', './images/avatars/pf20.jpg', 654567839, 7, 1234),
-	(22, 'AleDJ5', 'Alejandro5', 'Helios Camacho', './images/avatars/pf21.jpg', 654567839, 8, 1),
-	(23, 'AleDJ6', 'Alejandro6', 'Helios Camacho', './images/avatars/pf22.jpg', 654567839, 18, 24),
-	(24, 'AleDJ7', 'Alejandro7', 'Helios Camacho','./images/avatars/pf23.jpg', 654567839, 2, 62),
-	(25, 'AleDJ8', 'Alejandro8', 'Helios Camacho','./images/avatars/pf24.jpg', 654567839, 8, 62),
-	(26, 'AleDJ9', 'Alejandro9', 'Helios Camacho','./images/avatars/pf25.jpg', 654567839, 678, 2),
-	(27, 'albagm1', 'Alba1', 'Gonzalez Macho',  './images/avatars/pf26.jpg', 654567839, 12, 622),
-	(28, 'albagm2', 'Alba2', 'Gonzalez Macho',  './images/avatars/pf27.jpg', 654567839, 38, 6),
-	(29, 'albagm3', 'Alba3', 'Gonzalez Macho',  './images/avatars/pf28.jpg', 654567839, 67, 62),
-	(30, 'albagm4', 'Alba4', 'Gonzalez Macho',  './images/avatars/pf29.jpg', 654567839, 12, 35),
-	(31, 'albagm5', 'Alba5', 'Gonzalez Macho',  './images/avatars/pf30.jpg', 654567839, 145, 22);
+	(1, 'maria_rc', 'Maria', 'Romero Camacho', './images/avatars/pf0.jpg', 654567839),
+	(2, 'juanms01', 'Juan', 'Macho Sanchez', './images/avatars/pf1.jpg', 654567839),
+	(3, 'pjm1', 'Pedro', 'Camacho Oliva', './images/avatars/pf2.jpg', 654567839),
+	(4, 'john99', 'Jhon', 'Gibson Gonzalez', './images/avatars/pf3.jpg', 654567839),
+	(5, 'mari_', 'Maria', 'Magdalena Ramirez', './images/avatars/pf4.jpg', 654567839),
+	(6, 'ivangrm', 'Ivan', 'Gallardo Retamal', './images/avatars/pf5.jpg', 654567839),
+	(7, 'rob80', 'Robert', 'Marin Montes', './images/avatars/pf6.jpg', 654567839),
+	(8, 'jiaopin', 'Jiao', 'Ping Ho', './images/avatars/pf7.jpg', 654567839),
+	(9, 'se_is', 'Sheila', 'Rodriguez Benitez', './images/avatars/pf8.jpg', 654567839),
+	(10, 'sabrinacp', 'Sabrina', 'Carpenter Peterson', './images/avatars/pf9.jpg', 654567839),
+	(11, 'Macmacvic', 'Macarena', 'Castro Garcia', './images/avatars/pf10.jpg', 654567839),
+	(12, 'ezegonmac', 'Ezequiel', 'Gonzalez Macho', './images/avatars/pf11.jpg', 654567839),
+	(13, 'albagm0', 'Alba', 'Gonzalez Macho', './images/avatars/pf12.jpg', 654567839),
+	(14, 'AleDJ', 'Alejandro', 'Helios Camacho', './images/avatars/pf13.jpg', 654567839),
+	(15, 'martamm2001', 'Marta', 'Muñoz Macho', './images/avatars/pf14.jpg', 654567839),
+	(16, 'HannaG', 'Hanna', 'Gutierrez Marin', './images/avatars/pf15.jpg', 654567839),
+	(17, 'AleDJ0', 'Alejandro0', 'Helios Camacho', './images/avatars/pf16.jpg', 654567839),
+	(18, 'AleDJ1', 'Alejandro1', 'Helios Camacho', './images/avatars/pf17.jpg', 654567839),
+	(19, 'AleDJ2', 'Alejandro2', 'Helios Camacho', './images/avatars/pf18.jpg', 654567839),
+	(20, 'AleDJ3', 'Alejandro3', 'Helios Camacho', './images/avatars/pf19.jpg', 654567839),
+	(21, 'AleDJ4', 'Alejandro4', 'Helios Camacho', './images/avatars/pf20.jpg', 654567839),
+	(22, 'AleDJ5', 'Alejandro5', 'Helios Camacho', './images/avatars/pf21.jpg', 654567839),
+	(23, 'AleDJ6', 'Alejandro6', 'Helios Camacho', './images/avatars/pf22.jpg', 654567839),
+	(24, 'AleDJ7', 'Alejandro7', 'Helios Camacho','./images/avatars/pf23.jpg', 654567839),
+	(25, 'AleDJ8', 'Alejandro8', 'Helios Camacho','./images/avatars/pf24.jpg', 654567839),
+	(26, 'AleDJ9', 'Alejandro9', 'Helios Camacho','./images/avatars/pf25.jpg', 654567839),
+	(27, 'albagm1', 'Alba1', 'Gonzalez Macho',  './images/avatars/pf26.jpg', 654567839),
+	(28, 'albagm2', 'Alba2', 'Gonzalez Macho',  './images/avatars/pf27.jpg', 654567839),
+	(29, 'albagm3', 'Alba3', 'Gonzalez Macho',  './images/avatars/pf28.jpg', 654567839),
+	(30, 'albagm4', 'Alba4', 'Gonzalez Macho',  './images/avatars/pf29.jpg', 654567839),
+	(31, 'albagm5', 'Alba5', 'Gonzalez Macho',  './images/avatars/pf30.jpg', 654567839);
 
 
 INSERT INTO Photos (
@@ -132,26 +130,6 @@ INSERT INTO Comments (
 	(28,5,7,'Comentario de ejemplo 1',1.5,'2020-01-01'),
 	(29,3,7,'Comentario de ejemplo 1',1,'2020-01-01'),
 	(30,7,9,'Comentario de ejemplo 1',2,'2020-01-01');
-	
-	INSERT INTO Followers(
-	`followersId`,
-	`followerId`,
-	`followingId`
-)	
-	VALUES (1 ,1 ,2),
-			 (2 ,1 ,3),
-			 (3 ,1 ,4),
-			 (4 ,1 ,5),
-			 (5 ,1 ,6),
-			 (6 ,1 ,7),
-			 (7 ,1 ,8),
-			 (8 ,1 ,9),
-			 (9 ,1 ,1),
-			 (10,2 ,1),
-			 (11,2 ,3),
-			 (12,2 ,4),
-			 (13,2 ,5),
-			 (14,2 ,6);
 
 	INSERT INTO Categories (
 	`categorieId`,
@@ -215,4 +193,43 @@ VALUES
 	(3, "Cabron"),
 	(4, "Mierda"),
 	(5, "Joder"),
-	(6, "Gilipollas");
+	(6, "Gilipollas"),
+	(7, "Puto"),
+	(8, "Cabrona");
+	
+	
+	INSERT INTO Followers(
+	`followersId`,
+	`followerId`,
+	`followingId`
+)	
+	VALUES 
+		(1 ,1 ,2),
+		(2 ,1 ,3),
+		(3 ,1 ,4),
+		(4 ,1 ,5),
+		(5 ,1 ,6),
+		(6 ,1 ,7),
+		(7 ,1 ,8),
+		(8 ,1 ,9),
+		(9 ,1 ,10),
+		(10,2 ,1),
+		(11,2 ,3),
+		(12,2 ,4),
+		(13,2 ,5),
+		(14,2 ,6),
+		(15,3 ,1),
+		(16,3 ,2),
+		(17,3 ,3),
+		(18,3 ,4),
+		(19,3 ,5),
+		(20,3 ,6),
+		(21,3 ,8),
+		(22,3 ,7),
+		(23,3 ,9),
+		(24,3 ,10),
+		(25,3 ,11),
+		(26,3 ,12),
+		(27,3 ,13),
+		(28,3 ,14),
+		(29,3 ,15);
