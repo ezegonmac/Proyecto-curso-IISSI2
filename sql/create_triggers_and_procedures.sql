@@ -25,14 +25,14 @@ FOR EACH ROW
 BEGIN
 	DECLARE `followers` INT;
 	DECLARE `following` INT;
-	SET `followers` = (SELECT U.`followers` FROM Users U WHERE U.userId = new.followerId);
-	SET `following` = (SELECT U.`following` FROM Users U WHERE U.userId = new.followingId);
+	SET `followers` = (SELECT U.`followers` FROM Users U WHERE U.userId = new.followingId);
+	SET `following` = (SELECT U.`following` FROM Users U WHERE U.userId = new.followerId);
 	
 	SET `followers` = `followers` + 1;
 	SET `following` = `following` + 1;
 	
-	UPDATE Users U SET U.`followers`=`followers` WHERE userId = new.followersId;
-	UPDATE Users U SET U.`following`=`following` WHERE userId = new.followingId;
+	UPDATE Users U SET U.`followers`=`followers` WHERE userId = new.followingId;
+	UPDATE Users U SET U.`following`=`following` WHERE userId = new.followerId;
 END //
 DELIMITER ;
 
@@ -44,14 +44,14 @@ FOR EACH ROW
 BEGIN
 	DECLARE `followers` INT;
 	DECLARE `following` INT;
-	SET `followers` = (SELECT U.`followers` FROM Users U WHERE U.userId = old.followerId);
-	SET `following` = (SELECT U.`following` FROM Users U WHERE U.userId = old.followingId);
+	SET `followers` = (SELECT U.`followers` FROM Users U WHERE U.userId = old.followingId);
+	SET `following` = (SELECT U.`following` FROM Users U WHERE U.userId = old.followerId);
 	
 	SET `followers` = `followers` - 1;
 	SET `following` = `following` - 1;
 	
-	UPDATE Users U SET U.`followers`=`followers` WHERE userId = old.followersId;
-	UPDATE Users U SET U.`following`=`following` WHERE userId = old.followingId;
+	UPDATE Users U SET U.`followers`=`followers` WHERE userId = old.followingId;
+	UPDATE Users U SET U.`following`=`following` WHERE userId = old.followerId;
 END //
 DELIMITER ;
 

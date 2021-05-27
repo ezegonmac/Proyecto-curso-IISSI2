@@ -51,6 +51,16 @@ def get_all_ordered_by_comments():
 ###############################################################################
 
 @endpoint(
+    route="/photos/following/$followerId",
+    method="GET",
+    sql="SELECT * FROM Followers F INNER JOIN Photos P ON F.followingId = P.userId WHERE F.followerId=$followerId ORDER BY date DESC"
+)
+def get_all_from_following():
+    pass
+
+###############################################################################
+
+@endpoint(
     route="/photos",
     method="POST",
     sql="INSERT INTO Photos (title, description, url, visibility, userId) VALUES ($title, $description, $url, $visibility, $userId)",

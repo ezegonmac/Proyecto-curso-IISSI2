@@ -43,6 +43,17 @@ const photosAPI = {
 				.catch((error) => reject(error.response.data.message));
 		});
 	},
+	getAllFromFollowing: function (followerId) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.get(
+					`${BASE_URL}/photos/following/${followerId}`,
+					requestOptions
+				)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+	},
 	create: function (formData) {
 		return new Promise(function (resolve, reject) {
 			axios

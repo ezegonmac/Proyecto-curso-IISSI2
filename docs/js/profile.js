@@ -1,6 +1,7 @@
 "use strict";
 import { userRenderer } from "/js/renderers/users.js";
 import { usersAPI } from "/js/api/users.js";
+import { followersAPI } from "/js/api/followers.js";
 import { sessionManager } from "/js/utils/session.js";
 
 let urlParams = new URLSearchParams(window.location.search);
@@ -13,7 +14,9 @@ function main() {
 			// RENDERERS
 			renderUserProfile(users);
 
-			hideActions(userId);
+			hideActions();
+
+			renderFollowBtn();
 		})
 		.catch((error) => console.error(error));
 
@@ -33,7 +36,8 @@ function renderUserProfile(users) {
 	container.appendChild(cards[1]);
 }
 
-function hideActions(profileOwnerId) {
+function hideActions() {
+	let profileOwnerId = userId;
 	let actions_container = document.querySelector("#follow-btn");
 
 	let loggedUserId = sessionManager.getLoggedUser().userId;
@@ -43,6 +47,62 @@ function hideActions(profileOwnerId) {
 }
 
 // BUTTONS
+
+// - follow-button
+function renderFollowBtn() {
+	let followBtn = document.querySelector("#follow-btn");
+	let followerId = sessionManager.getLoggedId();
+	let followingId = userId;
+
+	// Render when the page is loaded
+	followersAPI
+		.getNumByIds(followerId, followingId)
+		.then((followers) => {
+			let n = Object.values(followers[0])[0];
+			if (n == 0) {
+				// Not followed
+				console.log(n);
+			} else {
+				// Followed
+				console.log(n);
+				followBtn.innerText = "Unfollow";
+			}
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+
+	// Action when is clicked
+	followBtn.addEventListener("click", function () {
+		console.log("click");
+		let notFollowing = followBtn.innerText == "Follow";
+		if (notFollowing) {
+			let formData = new FormData();
+			formData.append("followerId", followerId);
+			formData.append("followingId", followingId);
+
+			console.log(formData);
+			followersAPI
+				.create(formData)
+				.then((data) => {
+					console.log("Followed");
+				})
+				.catch((error) => console.error(error));
+
+			followBtn.innerText = "Unfollow";
+		} else {
+			followersAPI
+				.delete(followerId, followingId)
+				.then((data) => {
+					console.log("Unfollowed");
+				})
+				.catch((error) => console.error(error));
+
+			followBtn.innerText = "Follow";
+		}
+		document.location.reload();
+	});
+}
 
 // - new-post-button
 function renderNewPostBtn() {

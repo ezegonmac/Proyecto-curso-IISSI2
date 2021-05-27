@@ -2,6 +2,7 @@
 
 import { photoValidator } from "/js/validators/photos.js";
 import { photosAPI } from "/js/api/photos.js";
+import { sessionManager } from "/js/utils/session.js";
 
 function main() {
 	let form = document.querySelector("#form");
