@@ -30,10 +30,10 @@ const categoriesAPI = {
 				.catch((error) => reject(error.response.data.message));
 		});
 	},
-	create: function (formData) {
+	create: function (name) {
 		return new Promise(function (resolve, reject) {
 			axios
-				.post(`${BASE_URL}/categories`, formData, requestOptions)
+				.post(`${BASE_URL}/categories/create/${name}`, requestOptions)
 				.then((response) => resolve(response.data))
 				.catch((error) => reject(error.response.data.message));
 		});

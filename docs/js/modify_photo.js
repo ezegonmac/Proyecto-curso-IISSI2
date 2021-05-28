@@ -140,6 +140,7 @@ function renderPhotoDetails() {
 			renderCancelBtn();
 			renderCancelDelBtn();
 			renderConfirmBtn();
+			renderAddCategorieBtn();
 		})
 		.catch((error) => console.error(error));
 }
@@ -190,6 +191,22 @@ function handleSubmitForm(event) {
 }
 
 // BUTTONS
+
+// - add categorie button
+function renderAddCategorieBtn() {
+	let addCatBtn = document.querySelector("#add-categorie-button");
+
+	addCatBtn.addEventListener("click", function () {
+		let name = prompt("Input the categorie name", "Name");
+
+		categoriesAPI
+			.create(name)
+			.then((data) => {
+				document.location.reload();
+			})
+			.catch((error) => console.error(error));
+	});
+}
 
 // - cancel button
 function renderCancelBtn() {

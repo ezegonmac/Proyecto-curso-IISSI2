@@ -46,10 +46,22 @@ def create(name):
     route="/categories/add/$photoId/$categorieId",
     method="POST",
     sql="INSERT INTO PhotosCategories (photoId, categorieId) VALUES ($photoId, $categorieId)",
-    description="Creates a new categorie",
+    description="Add a categorie to a photo",
     auth_required=False,
 )
 def add_categorie_to_photo(photoId, categorieId):
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/categories/create/$name",
+    method="POST",
+    sql="INSERT INTO Categories (name) VALUES ($name)",
+    description="Creates a new categorie",
+    auth_required=False,
+)
+def create_new_categorie(photoId, categorieId):
     pass
 
 ###############################################################################
