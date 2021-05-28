@@ -27,6 +27,17 @@ const photosAPI = {
 				.catch((error) => reject(error.response.data.message));
 		});
 	},
+	getAllFromCategorie: function (categorieId) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.get(
+					`${BASE_URL}/photos/categories/${categorieId}`,
+					requestOptions
+				)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+	},
 	getAllOrderedByPunctuation: function () {
 		return new Promise(function (resolve, reject) {
 			axios
@@ -74,6 +85,17 @@ const photosAPI = {
 		return new Promise(function (resolve, reject) {
 			axios
 				.delete(`${BASE_URL}/photos/${photoId}`, requestOptions)
+				.then((response) => resolve(response.data))
+				.catch((error) => reject(error.response.data.message));
+		});
+	},
+	deleteAllCategoriesFromPhoto: function (photoId) {
+		return new Promise(function (resolve, reject) {
+			axios
+				.delete(
+					`${BASE_URL}/photos/categories/${photoId}`,
+					requestOptions
+				)
 				.then((response) => resolve(response.data))
 				.catch((error) => reject(error.response.data.message));
 		});

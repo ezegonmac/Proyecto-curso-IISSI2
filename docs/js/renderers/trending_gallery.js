@@ -6,11 +6,12 @@ import { userRenderer } from "/js/renderers/users.js";
 import { categorieRenderer } from "/js/renderers/categories.js";
 import { photosAPI } from "/js/api/photos.js";
 import { usersAPI } from "/js/api/users.js";
+import { categoriesAPI } from "/js/api/categories.js";
 
 const rowLenght = 5;
 
 const trendingGalleryRenderer = {
-	asCategorieRow: function (categories) {
+	asCategorieRow: function () {
 		// container
 		let html = `<div id="section-muc" class="row">
 						<h5 class="card-title">Most Used Categories</h5>
@@ -18,16 +19,19 @@ const trendingGalleryRenderer = {
 
 		let container = parseHTML(html);
 
-		// categories
-
-		// Recorremos las categorias y las añadimos al container
-		let i = 0;
-		while (i < rowLenght) {
-			let categorie = categories[i];
-			let card = categorieRenderer.asMiniCard(categorie);
-			container.appendChild(card);
-			i++;
-		}
+		categoriesAPI
+			.getAll()
+			.then((categories) => {
+				// Recorremos las categorias y las añadimos al container
+				let i = 0;
+				while (i < rowLenght) {
+					let categorie = categories[i];
+					let card = categorieRenderer.asMiniCard(categorie);
+					container.appendChild(card);
+					i++;
+				}
+			})
+			.catch((error) => console.error(error));
 
 		return container;
 	},
@@ -79,9 +83,7 @@ const trendingGalleryRenderer = {
 					i++;
 				}
 			})
-			.catch((error) => {
-				console.error(error);
-			});
+			.catch((error) => console.error(error));
 
 		return container;
 	},
@@ -106,9 +108,7 @@ const trendingGalleryRenderer = {
 					i++;
 				}
 			})
-			.catch((errors) => {
-				console.error(errors);
-			});
+			.catch((errors) => console.error(errors));
 
 		return container;
 	},
@@ -133,9 +133,7 @@ const trendingGalleryRenderer = {
 					i++;
 				}
 			})
-			.catch((errors) => {
-				console.error(errors);
-			});
+			.catch((errors) => console.error(errors));
 
 		return container;
 	},

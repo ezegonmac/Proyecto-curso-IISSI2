@@ -3,13 +3,16 @@
 import { photosAPI } from "/js/api/photos.js";
 import { photoRenderer } from "/js/renderers/photos.js";
 import { languageAPI } from "/js/api/language.js";
+import { categoriesAPI } from "/js/api/categories.js";
 import { messageRenderer } from "/js/renderers/messages.js";
+import { categorieRenderer } from "/js/renderers/categories.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
 
 function main() {
 	renderPhotoDetails();
+	renderSearchOptions();
 
 	// form
 	let form = document.querySelector("#form");
@@ -17,6 +20,23 @@ function main() {
 }
 
 // FORM
+function renderSearchOptions() {
+	categoriesAPI
+		.getAll()
+		.then((categories) => {
+			let container = document.querySelector("#inlineFormCustomSelect");
+
+			for (let categorie of categories) {
+				let card = categorieRenderer.asFormItem(categorie);
+				container.appendChild(card);
+			}
+
+			// TODO
+			//renderUsedCategories();
+		})
+		.catch((error) => console.error(error));
+}
+
 function handleSubmitPhoto(event) {
 	event.preventDefault();
 	let form = event.target;
@@ -53,9 +73,18 @@ function handleSubmitPhoto(event) {
 				photosAPI
 					.update(photoId, formData)
 					.then((data) => {
-						window.location.assign(
-							`/photo_details.html?photoId=${photoId}`
-						);
+						// 1 delete all categories
+						photosAPI.deleteAllCategoriesFromPhoto(photoId);
+						// 2 add the specified categories
+						setTimeout(function () {
+							addCategoriesToPhoto(formData);
+						}, 500);
+
+						setTimeout(function () {
+							window.location.assign(
+								`/photo_details.html?photoId=${photoId}`
+							);
+						}, 1000);
 					})
 					.catch((error) => console.error(error));
 			}
@@ -115,7 +144,34 @@ function renderPhotoDetails() {
 		.catch((error) => console.error(error));
 }
 
+function renderUsedCategories() {
+	categoriesAPI
+		.getByPhotoId(photoId)
+		.then((categories) => {
+			for (let categorie of categories) {
+				let categorieId = categorie["categorieId"];
+				let option = document.querySelector(
+					"option[value=" + categorieId + "]"
+				);
+				console.log(option);
+				option.setAttibute("font-weight", "bold");
+			}
+		})
+		.catch((error) => console.error(error));
+}
+
 // FORM
+
+function addCategoriesToPhoto(formData) {
+	for (let value of formData) {
+		let isCategorie = value[0] == "categorie";
+		if (isCategorie) {
+			let categorieId = value[1];
+			console.log(categorieId);
+			categoriesAPI.addCategorieToPhoto(photoId, categorieId);
+		}
+	}
+}
 
 function handleSubmitForm(event) {
 	event.preventDefault();

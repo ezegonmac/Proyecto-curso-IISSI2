@@ -48,7 +48,8 @@ CREATE TABLE Comments (
 
 CREATE TABLE Categories (
 	`categorieId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`name`VARCHAR(250) NOT NULL
+	`name`VARCHAR(250) UNIQUE NOT NULL,
+	`timesUsed` INT DEFAULT 0
 );
 
 CREATE TABLE PhotosCategories (

@@ -82,7 +82,7 @@ body {
 	align-items: center;
 }
 
-#navbar-search::after {
+/* #navbar-search::after {
 	content: "Nature";
 
 	color: var(--on1);
@@ -95,4 +95,46 @@ body {
 	position: absolute;
 	bottom: -60px;
 	left: 12%;
+} */
+
+form {
+	min-width: 300px;
+	width: 70%;
+}
+
+#form-dropdown {
+	min-width: 100px;
+	width: 70%;
+}
+
+option {
+	display: flex;
+	justify-content: space-around;
+	width: 90%;
+}
+
+/* TITLE */
+
+#container-background {
+	background-color: var(--background);
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#title-container {
+	color: var(--on2);
+	background-color: var(--surface);
+	font-size: 1.5rem;
+
+	height: 60px;
+	width: 70%;
+	padding: 10px;
+
+	margin: 30px;
+	margin-bottom: 0;
+}
+
+#title {
 }

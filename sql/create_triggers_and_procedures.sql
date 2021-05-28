@@ -113,3 +113,33 @@ BEGIN
 	UPDATE Photos P SET P.`comments`=`n` WHERE photoId = new.photoId;
 END //
 DELIMITER ;
+
+-- insert number of times used categories
+DELIMITER //
+CREATE OR REPLACE TRIGGER triggerInsertCategories
+AFTER INSERT ON PhotosCategories
+FOR EACH ROW
+BEGIN
+	DECLARE n INT;
+	SET n = (SELECT C.timesUsed FROM Categories C WHERE C.categorieId = new.categorieId);
+	
+	SET n = n + 1;
+	
+	UPDATE Categories C SET C.timesUsed = n WHERE categorieId = new.categorieId;
+END //
+DELIMITER ;
+
+-- delete number of times used categories
+DELIMITER //
+CREATE OR REPLACE TRIGGER triggerDeleteCategories
+AFTER DELETE ON PhotosCategories
+FOR EACH ROW
+BEGIN
+	DECLARE n INT;
+	SET n = (SELECT C.timesUsed FROM Categories C WHERE C.categorieId = old.categorieId);
+
+	SET n = n - 1;
+	
+	UPDATE Categories C SET C.timesUsed = n WHERE categorieId = old.categorieId;
+END //
+DELIMITER ;

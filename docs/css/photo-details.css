@@ -6,7 +6,7 @@
 
 .top-section > p,
 .bottom-section > p,
-#bottom-card > p {
+#bottom-card p {
 	color: var(--on1);
 	font-family: var(--font1);
 	font-weight: bold;
@@ -202,4 +202,15 @@
 #errors-new-com,
 #errors-mod-com {
 	padding: 20px;
+}
+
+#categories {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#categories p {
+	margin: 5px;
 }

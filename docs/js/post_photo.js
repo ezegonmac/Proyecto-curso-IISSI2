@@ -3,12 +3,30 @@
 import { photosAPI } from "/js/api/photos.js";
 import { sessionManager } from "/js/utils/session.js";
 import { languageAPI } from "/js/api/language.js";
+import { categoriesAPI } from "/js/api/categories.js";
 import { messageRenderer } from "/js/renderers/messages.js";
+import { categorieRenderer } from "/js/renderers/categories.js";
 
 function main() {
 	let form = document.querySelector("#form");
-
 	form.onsubmit = handleSubmitForm;
+
+	renderSearchOptions();
+}
+
+// FORM
+function renderSearchOptions() {
+	categoriesAPI
+		.getAll()
+		.then((categories) => {
+			let container = document.querySelector("#inlineFormCustomSelect");
+
+			for (let categorie of categories) {
+				let card = categorieRenderer.asFormItem(categorie);
+				container.appendChild(card);
+			}
+		})
+		.catch((error) => console.error(error));
 }
 
 // BUTTONS

@@ -2,43 +2,31 @@
 
 import { parseHTML } from "/js/utils/parseHTML.js";
 
-let categories = [
-	{
-		name: "#categorie1",
-		times_used: "345",
-	},
-	{
-		name: "#categorie2",
-		times_used: "3445",
-	},
-	{
-		name: "#categorie3",
-		times_used: "3465",
-	},
-	{
-		name: "#categorie4",
-		times_used: "3435",
-	},
-	{
-		name: "#categorie5",
-		times_used: "34325",
-	},
-	{
-		name: "#categorie6",
-		times_used: "34359",
-	},
-];
-
 const categorieRenderer = {
 	asMiniCard: function (categorie) {
 		let html = `<div class="col-md">
                         <a class="mini-card" href="#">
-                            <p>${categorie.name}</p>
+                            <p>#${categorie.name}</p>
                         </a>
                         <p class="times_used"
-                        >${categorie.times_used}
+                        >${categorie.timesUsed}
                         </p>
                     </div>`;
+
+		let card = parseHTML(html);
+		return card;
+	},
+	asFormItem: function (categorie) {
+		let html = `<option value="${categorie.categorieId}">
+						<p id="form_name">#${categorie.name} &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</p>
+						<p id="form_timesUsed">${categorie.timesUsed}</p>
+					</option>`;
+
+		let card = parseHTML(html);
+		return card;
+	},
+	asTextContainer: function (categorie) {
+		let html = `<p>#${categorie.name}</p>`;
 
 		let card = parseHTML(html);
 		return card;
@@ -46,4 +34,3 @@ const categorieRenderer = {
 };
 
 export { categorieRenderer };
-export { categories };

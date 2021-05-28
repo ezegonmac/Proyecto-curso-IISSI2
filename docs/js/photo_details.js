@@ -4,9 +4,11 @@ import { photoRenderer } from "/js/renderers/photos.js";
 import { commentValidator } from "/js/validators/comments.js";
 import { photosAPI } from "/js/api/photos.js";
 import { commentsAPI } from "/js/api/comments.js";
+import { languageAPI } from "/js/api/language.js";
+import { categoriesAPI } from "/js/api/categories.js";
 import { messageRenderer } from "/js/renderers/messages.js";
 import { sessionManager } from "/js/utils/session.js";
-import { languageAPI } from "/js/api/language.js";
+import { categorieRenderer } from "/js/renderers/categories.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -41,6 +43,21 @@ function main() {
 }
 // RENDERERS
 
+function renderCategories() {
+	let categoriesContainer = document.querySelector("#categories");
+
+	categoriesAPI
+		.getByPhotoId(photoId)
+		.then((categories) => {
+			for (let categorie of categories) {
+				let card = categorieRenderer.asTextContainer(categorie);
+
+				categoriesContainer.appendChild(card);
+			}
+		})
+		.catch((error) => console.error(error));
+}
+
 function renderPhotoDetails(photo) {
 	let cards = photoRenderer.asDetail(photo);
 
@@ -55,6 +72,8 @@ function renderPhotoDetails(photo) {
 	container2.insertBefore(cards[2], container2.firstChild);
 
 	container3.appendChild(cards[3]);
+
+	renderCategories();
 }
 
 function hideActions(photoOwnerId) {

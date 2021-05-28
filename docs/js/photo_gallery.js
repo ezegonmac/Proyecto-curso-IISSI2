@@ -5,12 +5,24 @@ import { photosAPI } from "/js/api/photos.js";
 let urlParams = new URLSearchParams(window.location.search);
 let userId = urlParams.get("userId");
 let followerId = urlParams.get("followerId");
+let categorieId = urlParams.get("categorieId");
 
 function main() {
 	let container = document.querySelector("#center-section");
 
+	// ALL FROM CATEGORIE
+	if (categorieId != null) {
+		console.log(categorieId);
+		photosAPI
+			.getAllFromCategorie(categorieId)
+			.then((photos) => {
+				let gallery = galleryRenderer.asCardGallery(photos);
+				container.appendChild(gallery);
+			})
+			.catch((error) => console.error(error));
+	}
 	// ALL FROM USER FOLLOWINGS
-	if (followerId != null) {
+	else if (followerId != null) {
 		console.log(followerId);
 		photosAPI
 			.getAllFromFollowing(followerId)
@@ -19,9 +31,9 @@ function main() {
 				container.appendChild(gallery);
 			})
 			.catch((error) => console.error(error));
-
-		// ALL PHOTOS FROM ONE USER
-	} else if (userId != null) {
+	}
+	// ALL PHOTOS FROM ONE USER
+	else if (userId != null) {
 		photosAPI
 			.getAllFromUser(userId)
 			.then((photos) => {

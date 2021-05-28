@@ -28,6 +28,16 @@ def get_by_id():
 def get_by_user_id():
     pass
 
+###############################################################################
+
+@endpoint(
+    route="/photos/categories/$categorieId",
+    method="GET",
+    sql="SELECT * FROM PhotosCategories C INNER JOIN Photos P ON C.photoId = P.photoId WHERE categorieId = $categorieId ORDER BY date"
+)
+def get_all_from_categorie_id():
+    pass
+
 ################################################################################
 
 @endpoint(
@@ -92,4 +102,16 @@ def update(title, description, visibility):
     auth_required=False,
 )
 def delete():
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/photos/categories/$photoId",
+    method="DELETE",
+    sql="DELETE FROM PhotosCategories WHERE photoId = $photoId;",
+    description="Removes all categories from one photo",
+    auth_required=False,
+)
+def delete_all_from_photo():
     pass
