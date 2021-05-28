@@ -65,13 +65,24 @@ function handleSubmitPhoto(event) {
 		});
 }
 
-function handleDelete(event) {
-	let answer = confirm("Do you really want to delete this photo?");
-	if (answer) {
-		photosAPI
-			.delete(photoId)
-			.then((data) => window.location.assign("feed_logged.html"))
-			.catch((error) => messageRenderer.showErrorMessage(error));
+function handleDelete(photo) {
+	let hasComments = photo.comments > 0;
+	if (hasComments) {
+		messageRenderer.showErrorMessage(
+			"You cannot delete a post if it already contains comments"
+		);
+	} else {
+		// let modal = document.querySelector("#confirm-del-modal");
+		// modal.classList.add("modal-visible");
+		// modal.classList.remove("modal-hidden");
+		// modal.setAttribute("aria-hidden", false);
+		let answer = confirm("Are you sure to delete this post?");
+		if (answer) {
+			photosAPI
+				.delete(photoId)
+				.then((data) => window.location.assign("feed_logged.html"))
+				.catch((error) => messageRenderer.showErrorMessage(error));
+		}
 	}
 }
 
@@ -93,16 +104,15 @@ function renderPhotoDetails() {
 
 			titleContainer.value = photo.title;
 			descContainer.value = photo.description;
+
+			// BUTTONS
+			renderSaveBtn();
+			renderDelBtn(photo);
+			renderCancelBtn();
+			renderCancelDelBtn();
+			renderConfirmBtn();
 		})
 		.catch((error) => console.error(error));
-
-	// BUTTONS
-
-	renderSaveBtn();
-	renderDelBtn();
-	renderCancelBtn();
-	renderCancelDelBtn();
-	renderConfirmBtn();
 }
 
 // FORM
@@ -144,10 +154,12 @@ function renderSaveBtn() {
 }
 
 // - delete button
-function renderDelBtn() {
+function renderDelBtn(photo) {
 	let delBtn = document.querySelector("#delete-button");
 
-	delBtn.onclick = function () {};
+	delBtn.addEventListener("click", function () {
+		handleDelete(photo);
+	});
 }
 
 // - cancel-del button
@@ -169,17 +181,6 @@ function renderConfirmBtn() {
 			})
 			.catch((error) => console.error(error));
 	};
-}
-
-function checkFormDataLanguage(formData) {
-	console.log(formData);
-	let title = formData.get("title");
-	let description = formData.get("description");
-	console.log(title);
-	console.log(description);
-
-	checkInappropiateLanguage(title);
-	checkInappropiateLanguage(description);
 }
 
 // -----
