@@ -103,3 +103,10 @@ body {
 	color: var(--color2);
 	text-shadow: 1px 1px 3px rgba(37, 37, 37, 0.767);
 }
+
+#errors {
+	background-color: var(--background);
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}

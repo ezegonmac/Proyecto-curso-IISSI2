@@ -1,8 +1,9 @@
 "use strict";
 
-import { photoValidator } from "/js/validators/photos.js";
 import { photosAPI } from "/js/api/photos.js";
 import { sessionManager } from "/js/utils/session.js";
+import { languageAPI } from "/js/api/language.js";
+import { messageRenderer } from "/js/renderers/messages.js";
 
 function main() {
 	let form = document.querySelector("#form");
@@ -29,26 +30,48 @@ function handleSubmitForm(event) {
 	let form = event.target;
 	let formData = new FormData(form);
 
-	// Add the current user ID
-	formData.append("userId", sessionManager.getLoggedId());
-	//console.log(formData.forEach((v) => console.log(v)));
-	photosAPI
-		.create(formData)
-		.then((data) => {
-			window.location.assign("/feed_logged.html");
+	let errors = [];
+
+	let text = formData.get("title");
+	text = text.concat(formData.get("description"));
+
+	text = text.toLowerCase();
+	languageAPI
+		.getAll()
+		.then((words) => {
+			for (let word of words) {
+				console.log(word);
+				let invalid = text.search(word.word) != -1;
+				if (invalid) {
+					// contains innapropiate words
+					errors.push(
+						"Title and description cannot contain inappropiate words"
+					);
+				}
+			}
+
+			/* Show errors in doc */
+			if (errors.length > 0) {
+				let errorsDiv = document.querySelector("#errors");
+				errorsDiv.innerHTML = "";
+				for (let error of errors) {
+					messageRenderer.showErrorMessage(error);
+				}
+			} else {
+				// Add the current user ID
+				formData.append("userId", sessionManager.getLoggedId());
+				//console.log(formData.forEach((v) => console.log(v)));
+				photosAPI
+					.create(formData)
+					.then((data) => {
+						window.location.assign("/feed_logged.html");
+					})
+					.catch((error) => console.error(error));
+			}
 		})
-		.catch((error) => console.error(error));
-
-	// let errors = photoValidator.validateNewComment(formData);
-
-	// /* Show errors in doc */
-	// if (errors.length > 0) {
-	// 	let errorsDiv = document.querySelector("#errors-new-com");
-	// 	errorsDiv.innerHTML = "";
-	// 	for (let error of errors) {
-	// 		messageRenderer.showErrorMessage(error);
-	// 	}
-	// }
+		.catch((error) => {
+			console.error(error);
+		});
 }
 
 document.addEventListener("DOMContentLoaded", main);

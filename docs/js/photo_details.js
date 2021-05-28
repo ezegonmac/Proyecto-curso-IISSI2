@@ -6,6 +6,7 @@ import { photosAPI } from "/js/api/photos.js";
 import { commentsAPI } from "/js/api/comments.js";
 import { messageRenderer } from "/js/renderers/messages.js";
 import { sessionManager } from "/js/utils/session.js";
+import { languageAPI } from "/js/api/language.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -123,30 +124,53 @@ function handleSubmitNewCom(event) {
 	let form = event.target;
 	let formData = new FormData(form);
 
-	let errors = commentValidator.validateModifyComment(formData);
+	let errors = [];
 
-	/* Show errors in doc */
-	if (errors.length > 0) {
-		let errorsDiv = document.querySelector("#errors-new-com");
-		errorsDiv.innerHTML = "";
-		for (let error of errors) {
-			messageRenderer.showErrorMessage(error);
-		}
-	}
+	let text = formData.get("comment");
 
-	// Add the current user ID
-	formData.append("userId", sessionManager.getLoggedId());
-	formData.append("photoId", photoId);
-	for (var value of formData.keys()) {
-		console.log(value);
-		console.log(formData.get(value));
-	}
-	commentsAPI
-		.create(formData)
-		.then((data) => {
-			window.location.assign(`/photo_details.html?photoId=` + photoId);
+	text = text.toLowerCase();
+	languageAPI
+		.getAll()
+		.then((words) => {
+			for (let word of words) {
+				console.log(word);
+				let invalid = text.search(word.word) != -1;
+				if (invalid) {
+					// contains innapropiate words
+					errors.push(
+						"Title and description cannot contain inappropiate words"
+					);
+				}
+			}
+
+			/* Show errors in doc */
+			if (errors.length > 0) {
+				let errorsDiv = document.querySelector("#errors");
+				errorsDiv.innerHTML = "";
+				for (let error of errors) {
+					messageRenderer.showErrorMessage(error);
+				}
+			} else {
+				// Add the current user ID
+				formData.append("userId", sessionManager.getLoggedId());
+				formData.append("photoId", photoId);
+				for (var value of formData.keys()) {
+					console.log(value);
+					console.log(formData.get(value));
+				}
+				commentsAPI
+					.create(formData)
+					.then((data) => {
+						window.location.assign(
+							`/photo_details.html?photoId=` + photoId
+						);
+					})
+					.catch((error) => console.error(error));
+			}
 		})
-		.catch((error) => console.error(error));
+		.catch((error) => {
+			console.error(error);
+		});
 }
 
 // - modify comment

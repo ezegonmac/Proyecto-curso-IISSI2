@@ -1,8 +1,9 @@
 "use strict";
 
-import { photoValidator } from "/js/validators/photos.js";
 import { photosAPI } from "/js/api/photos.js";
 import { photoRenderer } from "/js/renderers/photos.js";
+import { languageAPI } from "/js/api/language.js";
+import { messageRenderer } from "/js/renderers/messages.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -21,13 +22,47 @@ function handleSubmitPhoto(event) {
 	let form = event.target;
 	let formData = new FormData(form);
 
-	// TODO
-	photosAPI
-		.update(photoId, formData)
-		.then((data) => {
-			window.location.assign(`/photo_details.html?photoId=${photoId}`);
+	let errors = [];
+
+	let text = formData.get("title");
+	text = text.concat(formData.get("description"));
+
+	text = text.toLowerCase();
+	languageAPI
+		.getAll()
+		.then((words) => {
+			for (let word of words) {
+				console.log(word);
+				let invalid = text.search(word.word) != -1;
+				if (invalid) {
+					// contains innapropiate words
+					errors.push(
+						"Title and description cannot contain inappropiate words"
+					);
+				}
+			}
+
+			/* Show errors in doc */
+			if (errors.length > 0) {
+				let errorsDiv = document.querySelector("#errors");
+				errorsDiv.innerHTML = "";
+				for (let error of errors) {
+					messageRenderer.showErrorMessage(error);
+				}
+			} else {
+				photosAPI
+					.update(photoId, formData)
+					.then((data) => {
+						window.location.assign(
+							`/photo_details.html?photoId=${photoId}`
+						);
+					})
+					.catch((error) => console.error(error));
+			}
 		})
-		.catch((error) => console.error(error));
+		.catch((error) => {
+			console.error(error);
+		});
 }
 
 function handleDelete(event) {
@@ -134,6 +169,17 @@ function renderConfirmBtn() {
 			})
 			.catch((error) => console.error(error));
 	};
+}
+
+function checkFormDataLanguage(formData) {
+	console.log(formData);
+	let title = formData.get("title");
+	let description = formData.get("description");
+	console.log(title);
+	console.log(description);
+
+	checkInappropiateLanguage(title);
+	checkInappropiateLanguage(description);
 }
 
 // -----

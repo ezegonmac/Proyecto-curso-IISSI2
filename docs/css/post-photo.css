@@ -162,3 +162,10 @@
 	height: 80%;
 	overflow-y: scroll;
 }
+
+#errors {
+	background-color: var(--background);
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
