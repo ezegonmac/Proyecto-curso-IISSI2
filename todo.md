@@ -48,9 +48,10 @@
 # ERRORS
 
 1.  -   [x] Hide buttons in other profiles
-2.  -   [ ] Prevent redirection when clicking photos in feed (not logged)
-3.  -   [ ] Add button for adding categories in Post photo
+2.  -   [x] Prevent redirection when clicking photos in feed (not logged)
+3.  -   [x] Add button for adding categories in Post photo
 
 # IMPROVEMENTS
 
 1.  -   [ ] Add extra security to passwords
+2.  -   [ ] Add preview photo

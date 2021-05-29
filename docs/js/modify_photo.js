@@ -6,6 +6,7 @@ import { languageAPI } from "/js/api/language.js";
 import { categoriesAPI } from "/js/api/categories.js";
 import { messageRenderer } from "/js/renderers/messages.js";
 import { categorieRenderer } from "/js/renderers/categories.js";
+import { buttonRenderer } from "/js/renderers/buttons.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -140,7 +141,7 @@ function renderPhotoDetails() {
 			renderCancelBtn();
 			renderCancelDelBtn();
 			renderConfirmBtn();
-			renderAddCategorieBtn();
+			buttonRenderer.renderAddCategorieBtn();
 		})
 		.catch((error) => console.error(error));
 }
@@ -191,22 +192,6 @@ function handleSubmitForm(event) {
 }
 
 // BUTTONS
-
-// - add categorie button
-function renderAddCategorieBtn() {
-	let addCatBtn = document.querySelector("#add-categorie-button");
-
-	addCatBtn.addEventListener("click", function () {
-		let name = prompt("Input the categorie name", "Name");
-
-		categoriesAPI
-			.create(name)
-			.then((data) => {
-				document.location.reload();
-			})
-			.catch((error) => console.error(error));
-	});
-}
 
 // - cancel button
 function renderCancelBtn() {

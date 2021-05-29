@@ -6,12 +6,14 @@ import { languageAPI } from "/js/api/language.js";
 import { categoriesAPI } from "/js/api/categories.js";
 import { messageRenderer } from "/js/renderers/messages.js";
 import { categorieRenderer } from "/js/renderers/categories.js";
+import { buttonRenderer } from "/js/renderers/buttons.js";
 
 function main() {
 	let form = document.querySelector("#form");
 	form.onsubmit = handleSubmitForm;
 
 	renderSearchOptions();
+	buttonRenderer.renderAddCategorieBtn();
 }
 
 // FORM
