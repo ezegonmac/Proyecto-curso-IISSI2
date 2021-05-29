@@ -20,6 +20,23 @@ const photoRenderer = {
 
 		return card;
 	},
+	asCardNotLogged: function (photo) {
+		let html = `<div class="col">
+						<a class="photo-card">
+							<img class="card-image"
+								src=${photo.url}>
+							<div class="card-text">
+								<h5>${photo.title}</h5>
+								<p>${photo.description}</p>
+							</div>
+							<img class="avatar" >
+						</a>
+					</div>`;
+
+		let card = parseHTML(html);
+
+		return card;
+	},
 	asDetail: function (photo) {
 		// CALCS FOR STAR RATINGS
 		// Get percentage

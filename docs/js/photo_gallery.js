@@ -1,6 +1,7 @@
 "use strict";
 import { galleryRenderer } from "/js/renderers/gallery.js";
 import { photosAPI } from "/js/api/photos.js";
+import { sessionManager } from "/js/utils/session.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let userId = urlParams.get("userId");
@@ -42,13 +43,28 @@ function main() {
 			})
 			.catch((error) => console.error(error));
 	} else {
-		photosAPI
-			.getAll()
-			.then((photos) => {
-				let gallery = galleryRenderer.asCardGallery(photos);
-				container.appendChild(gallery);
-			})
-			.catch((error) => console.error(error));
+		let isLogged = sessionManager.isLogged();
+		// FEED LOGGED
+		if (isLogged) {
+			photosAPI
+				.getAll()
+				.then((photos) => {
+					let gallery = galleryRenderer.asCardGallery(photos);
+					container.appendChild(gallery);
+				})
+				.catch((error) => console.error(error));
+		}
+		// FEED NOT LOGGED
+		else {
+			photosAPI
+				.getAll()
+				.then((photos) => {
+					let gallery =
+						galleryRenderer.asCardGalleryNotLogged(photos);
+					container.appendChild(gallery);
+				})
+				.catch((error) => console.error(error));
+		}
 	}
 }
 
