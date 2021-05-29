@@ -41,6 +41,16 @@
     4.  -   [x] Register
 
 -   [ ] Trending
-    1.  -   [ ] Categories
+    1.  -   [x] Categories
     2.  -   [x] Punctuation Users
     3.  -   [x] Comments Posts
+
+# ERRORS
+
+1.  -   [x] Hide buttons in other profiles
+2.  -   [ ] Prevent redirection when clicking photos in feed (not logged)
+3.  -   [ ] Add button for adding categories in Post photo
+
+# IMPROVEMENTS
+
+1.  -   [ ] Add extra security to passwords

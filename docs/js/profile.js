@@ -37,12 +37,19 @@ function renderUserProfile(users) {
 }
 
 function hideActions() {
+	// FOLLOW BUTTON
 	let profileOwnerId = userId;
 	let actions_container = document.querySelector("#follow-btn");
 
 	let loggedUserId = sessionManager.getLoggedUser().userId;
 	if (loggedUserId == profileOwnerId) {
-		actions_container.style.display = "none";
+		actions2_container.style.display = "none";
+	}
+
+	// CLOSE SESSION AND POST PHOTO
+	let actions2_container = document.querySelector("#close-session-section");
+	if (loggedUserId != profileOwnerId) {
+		actions2_container.style.display = "none";
 	}
 }
 
