@@ -5,7 +5,7 @@ import { parseHTML } from "/js/utils/parseHTML.js";
 const categorieRenderer = {
 	asMiniCard: function (categorie) {
 		let html = `<div class="col-md">
-                        <a class="mini-card" href="#">
+                        <a class="mini-card" href="/search.html?categorieId=${categorie.categorieId}">
                             <p>#${categorie.name}</p>
                         </a>
                         <p class="times_used"
