@@ -14,17 +14,30 @@ const userValidator = {
 
 		if (name.length < 3 || surnames.length < 3) {
 			errors.push(
-				"The first and last name should have more than 3 characters "
+				"First and last name should have more than 3 characters "
 			);
 		}
 		if (passwd !== passwd2) {
-			errors.push("The passwords must match");
+			errors.push("Passwords must match");
 		}
-		if (passwd < 6) {
-			errors.push("The password must be at least 6 characters long");
+		if (passwd > 6) {
+			errors.push("Password must be at least 6 characters long");
+		}
+		if (!/\d/.test(passwd)) {
+			errors.push("Password must contains at least one number");
+		}
+		if (!/[a-z]/.test(passwd)) {
+			errors.push(
+				"Password must contains at least one lower case letter"
+			);
+		}
+		if (!/[A-Z]/.test(passwd)) {
+			errors.push(
+				"Password must contains at least one upper case letter"
+			);
 		}
 		if (phone.length != 9) {
-			errors.push("The phone number must be 9 characters long");
+			errors.push("Phone number must be 9 characters long");
 		}
 
 		return errors;

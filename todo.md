@@ -54,6 +54,6 @@
 
 # IMPROVEMENTS
 
-1.  -   [ ] Add extra security to passwords
+1.  -   [x] Add extra security to passwords
 2.  -   [x] Add preview photo
 3.  -   [ ] Render random photo from user in trending page

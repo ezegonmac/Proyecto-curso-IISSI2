@@ -34,7 +34,7 @@ function handleSubmitRegister(event) {
 		sendRegister(formData);
 		alert("Register done!");
 	} else {
-		let errorsDiv = document.querySelector("errors");
+		let errorsDiv = document.querySelector("#errors");
 		errorsDiv.innerHTML = "";
 		for (let error of errors) {
 			messageRenderer.showErrorMessage(error);
