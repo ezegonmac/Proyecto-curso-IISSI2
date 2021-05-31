@@ -51,6 +51,7 @@
 2.  -   [x] Prevent redirection when clicking photos in feed (not logged)
 3.  -   [x] Add button for adding categories in Post photo
 4.  -   [x] Categories not being added when posted
+5.  -   [ ] Redirect when clicking in categorie
 
 # IMPROVEMENTS
 

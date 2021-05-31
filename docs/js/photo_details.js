@@ -24,6 +24,7 @@ function main() {
 			// TODO
 			//renderCommentsDetails();
 
+			hideActions2();
 			hideActions(photo.userId);
 
 			// BUTTONS
@@ -146,19 +147,15 @@ function handleSubmitNewCom(event) {
 	let errors = [];
 
 	let text = formData.get("comment");
-
 	text = text.toLowerCase();
 	languageAPI
 		.getAll()
 		.then((words) => {
 			for (let word of words) {
-				console.log(word);
 				let invalid = text.search(word.word) != -1;
 				if (invalid) {
 					// contains innapropiate words
-					errors.push(
-						"Title and description cannot contain inappropiate words"
-					);
+					errors.push("Comments cannot contain inappropiate words");
 				}
 			}
 
@@ -190,6 +187,23 @@ function handleSubmitNewCom(event) {
 		.catch((error) => {
 			console.error(error);
 		});
+}
+
+function hideActions2() {
+	let actionsContainer = document.querySelector("#new-com-button");
+
+	let loggedId = sessionManager.getLoggedId();
+	commentsAPI
+		.getByPhotoId(photoId)
+		.then((comments) => {
+			for (let comment of comments) {
+				let hasComment = comment.userId == loggedId;
+				if (hasComment) {
+					actionsContainer.style.display = "none";
+				}
+			}
+		})
+		.catch((error) => console.error(error));
 }
 
 // - modify comment
