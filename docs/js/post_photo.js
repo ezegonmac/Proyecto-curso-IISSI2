@@ -94,7 +94,12 @@ function handleSubmitForm(event) {
 				photosAPI
 					.create(formData)
 					.then((data) => {
-						window.location.assign("/feed_logged.html");
+						let photoId = Object.values(data)[0];
+						addCategoriesToPhoto(formData, photoId);
+
+						setTimeout(function () {
+							window.location.assign("/feed_logged.html");
+						}, 1000);
 					})
 					.catch((error) => console.error(error));
 			}
@@ -102,6 +107,17 @@ function handleSubmitForm(event) {
 		.catch((error) => {
 			console.error(error);
 		});
+}
+
+function addCategoriesToPhoto(formData, photoId) {
+	for (let value of formData) {
+		let isCategorie = value[0] == "categorie";
+		if (isCategorie) {
+			let categorieId = value[1];
+			console.log(categorieId);
+			categoriesAPI.addCategorieToPhoto(photoId, categorieId);
+		}
+	}
 }
 
 document.addEventListener("DOMContentLoaded", main);
