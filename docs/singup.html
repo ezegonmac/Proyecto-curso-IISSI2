@@ -86,6 +86,15 @@
 								name="c-password"
 								required
 							/>
+
+							<label for="email" class="form-label">Email</label>
+							<input
+								id="email"
+								class="form-input"
+								type="email"
+								name="email"
+								required
+							/>
 						</fieldset>
 					</div>
 
@@ -102,15 +111,6 @@
 								required
 							/>
 
-							<label for="email" class="form-label">Email</label>
-							<input
-								id="email"
-								class="form-input"
-								type="email"
-								name="email"
-								required
-							/>
-
 							<label for="phone" class="form-label"
 								>Phone Number</label
 							>
@@ -121,8 +121,24 @@
 								name="phone"
 							/>
 
-							<label class="form-label">Profile Photo</label>
-							<input type="file" class="form-control" />
+							<label for="profile-url" class="form-label"
+								>Profile Photo</label
+							>
+							<!-- <input type="file" class="form-control" /> -->
+
+							<input
+								id="profile-url"
+								class="form-input"
+								type="url"
+								name="avatar"
+								class="form-control"
+							/>
+
+							<img
+								id="prev-photo"
+								class="full-photo"
+								src="/images/profile_photo.png"
+							/>
 						</fieldset>
 
 						<button id="submit-btn" class="button" type="submit"

@@ -43,7 +43,7 @@ function hideActions() {
 
 	let loggedUserId = sessionManager.getLoggedUser().userId;
 	if (loggedUserId == profileOwnerId) {
-		actions2_container.style.display = "none";
+		actions_container.style.display = "none";
 	}
 
 	// CLOSE SESSION AND POST PHOTO

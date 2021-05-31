@@ -9,6 +9,9 @@ function main() {
 	// FORM
 	let form = document.querySelector("#form");
 	form.onsubmit = handleSubmitRegister;
+
+	// RENDERERS
+	renderPreviewPhoto();
 }
 
 let btn = document.querySelector("#submit-btn");
@@ -21,7 +24,6 @@ btn.onClick = function () {
 function handleSubmitRegister(event) {
 	event.preventDefault();
 
-	alert("Register done!");
 	let form = event.target;
 	let formData = new FormData(form);
 
@@ -30,6 +32,7 @@ function handleSubmitRegister(event) {
 	/* Show errors in doc */
 	if (errors.length == 0) {
 		sendRegister(formData);
+		alert("Register done!");
 	} else {
 		let errorsDiv = document.querySelector("errors");
 		errorsDiv.innerHTML = "";
@@ -50,6 +53,16 @@ function sendRegister(formData) {
 			window.location.href = "/feed_logged.html";
 		})
 		.catch((error) => messageRenderer.showErrorMessage(error));
+}
+
+// RENDERERS
+function renderPreviewPhoto() {
+	let urlInput = document.getElementById("profile-url");
+	let prevImg = document.getElementById("prev-photo");
+
+	urlInput.addEventListener("change", function () {
+		prevImg.src = this.value;
+	});
 }
 
 document.addEventListener("DOMContentLoaded", main);

@@ -50,8 +50,10 @@
 1.  -   [x] Hide buttons in other profiles
 2.  -   [x] Prevent redirection when clicking photos in feed (not logged)
 3.  -   [x] Add button for adding categories in Post photo
+4.  -   [ ] Categories not being added when posted
 
 # IMPROVEMENTS
 
 1.  -   [ ] Add extra security to passwords
-2.  -   [ ] Add preview photo
+2.  -   [x] Add preview photo
+3.  -   [ ] Render random photo from user in trending page

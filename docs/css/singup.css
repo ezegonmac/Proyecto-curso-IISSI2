@@ -39,7 +39,7 @@
 }
 
 #submit-btn {
-	margin-top: 50px;
+	margin: 5px;
 }
 
 #errors {
@@ -47,4 +47,13 @@
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
+}
+
+#prev-photo {
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--on1);
+	object-fit: cover;
 }

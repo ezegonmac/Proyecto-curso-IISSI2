@@ -6,11 +6,12 @@ const userRenderer = {
 		let html1 = `<div id="profile-card" class="col-md-6">
                         <div id="avatar-card">
                             <img class="avatar" src=${user.avatar} />
-                            <p id="username">${user.username}</p>
+                            <p id="username">@${user.username}</p>
                         </div>
                         <div id="details-card">
                             <p class="name">${user.name}</p>
                             <p class="surnames">${user.surnames}</p>
+							<p class="surnames">${user.email}</p>
                         </div>
                      </div>`;
 

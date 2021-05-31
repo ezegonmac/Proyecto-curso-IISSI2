@@ -43,11 +43,11 @@ def get_all_ordered_by_punctuation():
 @endpoint(
     route="/users",
     method="POST",
-    sql="INSERT INTO Users (username, name, surnames, avatar, phone, followers, following) VALUES ($username, $name, $surnames, $avatar, $phone, $followers, $following)",
+    sql="INSERT INTO Users (username, name, surnames, avatar, phone, email) VALUES ($username, $name, $surnames, $avatar, $phone, $email)",
     description="creates a new user",
     auth_required=False
 )
-def create(username,name,surnames,avatar,phone,followers,following):
+def create(username,name,surnames,avatar,phone,email):
     pass
 
 ###############################################################################

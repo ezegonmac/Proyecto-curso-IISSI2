@@ -80,6 +80,8 @@
 
 .full-photo {
 	margin: 1rem;
+	max-width: 300px;
+	max-height: 300px;
 }
 
 /* --- bottom-sections --- */

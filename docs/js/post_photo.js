@@ -13,6 +13,7 @@ function main() {
 	form.onsubmit = handleSubmitForm;
 
 	renderSearchOptions();
+	renderPreviewPhoto();
 	buttonRenderer.renderAddCategorieBtn();
 }
 
@@ -29,6 +30,15 @@ function renderSearchOptions() {
 			}
 		})
 		.catch((error) => console.error(error));
+}
+
+function renderPreviewPhoto() {
+	let urlInput = document.getElementById("url-button");
+	let prevImg = document.getElementById("prev-photo");
+
+	urlInput.addEventListener("change", function () {
+		prevImg.src = this.value;
+	});
 }
 
 // BUTTONS
