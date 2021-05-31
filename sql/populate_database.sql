@@ -141,7 +141,16 @@ INSERT INTO Comments (
 	(27,12,4,'Comentario de ejemplo 1',1.5,'2020-01-01'),
 	(28,5,7,'Comentario de ejemplo 1',1.5,'2020-01-01'),
 	(29,3,7,'Comentario de ejemplo 1',1,'2020-01-01'),
-	(30,7,9,'Comentario de ejemplo 1',2,'2020-01-01');
+	(30,7,9,'Comentario de ejemplo 1',2,'2020-01-01'),
+	(31,7,14,'Comentario de ejemplo 1',2,'2020-01-01'),
+	(32,8,14,'Comentario de ejemplo 1',10,'2020-01-01'),
+	(33,13,14,'Comentario de ejemplo 1',2,'2020-01-01'),
+	(34,18,14,'Comentario de ejemplo 1',4,'2020-01-01'),
+	(35,14,14,'Comentario de ejemplo 1',5,'2020-01-01'),
+	(36,19,10,'Comentario de ejemplo 1',5,'2020-01-01'),
+	(37,22,10,'Comentario de ejemplo 1',2,'2020-01-01'),
+	(38,25,10,'Comentario de ejemplo 1',3,'2020-01-01'),
+	(39,29,10,'Comentario de ejemplo 1',5,'2020-01-01');
 
 	INSERT INTO Categories (
 	`categorieId`,
@@ -193,7 +202,20 @@ INSERT INTO Comments (
 		(26, 5, 2),
 		(27, 5, 3),
 		(28, 5, 4),
-		(29, 6, 5);
+		(29, 6, 5),
+		(30, 9, 2),
+		(31, 19, 2),
+		(32, 28, 2),
+		(33, 15, 2),
+		(34, 18, 2),
+		(35, 22, 3),
+		(36, 23, 3),
+		(37, 24, 3),
+		(38, 25, 3),
+		(39, 26, 3),
+		(40, 27, 4),
+		(41, 28, 4),
+		(42, 29, 4);
 
 INSERT INTO InapropiateWords(
 	`inapropiateWordId`,
@@ -207,7 +229,10 @@ VALUES
 	(5, "joder"),
 	(6, "gilipollas"),
 	(7, "puto"),
-	(8, "cabrona");
+	(8, "cabrona"),
+	(9, "bitch"),
+	(10, "moron"),
+	(11, "tonto");
 	
 	
 	INSERT INTO Followers(
@@ -244,4 +269,10 @@ VALUES
 		(26,3 ,12),
 		(27,3 ,13),
 		(28,3 ,14),
-		(29,3 ,15);
+		(29,3 ,15),
+		(30,5 ,4),
+		(31,6 ,4),
+		(32,7 ,4),
+		(33,8 ,1),
+		(34,10 ,15),
+		(35,25 ,1);
