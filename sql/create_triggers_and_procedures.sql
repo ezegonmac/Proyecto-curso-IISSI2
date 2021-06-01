@@ -7,10 +7,13 @@ FOR EACH ROW
 	BEGIN
 	
 	DECLARE numPhotos INT;
+	DECLARE maxPhotos INT;
+
+	SET maxPhotos = 50;
 	
 	SET numPhotos = (SELECT COUNT(*) FROM Photos P WHERE P.userId = new.userId);
 	
-	IF((numPhotos) > 50) THEN
+	IF((numPhotos) >= maxPhotos) THEN
 		SIGNAL SQLSTATE '45000' SET message_text =
 		'Un mismo usuario no puede subir mas de 50 fotos';
 	END IF;

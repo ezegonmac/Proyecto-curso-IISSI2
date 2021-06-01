@@ -1,9 +1,9 @@
 "use strict";
 
-import { authAPI } from "./api/auth.js";
-import { sessionManager } from "./utils/session.js";
-import { messageRenderer } from "./renderers/messages.js";
-import { userValidator } from "./validators/users.js";
+import { authAPI } from "/js/api/auth.js";
+import { sessionManager } from "/js/utils/session.js";
+import { messageRenderer } from "/js/renderers/messages.js";
+import { userValidator } from "/js/validators/users.js";
 
 function main() {
 	// FORM
@@ -14,7 +14,6 @@ function main() {
 function handleSubmitLogin(event) {
 	event.preventDefault();
 
-	alert("Login done!");
 	let form = event.target;
 	let formData = new FormData(form);
 
@@ -44,7 +43,7 @@ function sendLogin(formData) {
 			sessionManager.login(sessionToken, loggedUser);
 			window.location.href = "/feed_logged.html";
 		})
-		.catch((error) => messageRenderer.showErrorAsAlert(error));
+		.catch((error) => messageRenderer.showErrorMessage(error));
 }
 
 document.addEventListener("DOMContentLoaded", main);

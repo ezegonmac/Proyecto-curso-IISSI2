@@ -101,7 +101,7 @@ function handleSubmitForm(event) {
 							window.location.assign("/feed_logged.html");
 						}, 1000);
 					})
-					.catch((error) => console.error(error));
+					.catch((error) => messageRenderer.showErrorMessage(error));
 			}
 		})
 		.catch((error) => {

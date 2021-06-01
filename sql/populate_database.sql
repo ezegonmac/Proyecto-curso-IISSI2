@@ -50,7 +50,8 @@ INSERT INTO USERS (
 	`phone`
 )
 VALUES 
-	(32, 'ezegonmac2', 'Ezequiel', 'Macho', './images/profile_photo.png', 'pbkdf2:sha256:150000$mkyP4LPf$1dbe7d01b040aedca49310885aed1f66079b8dddca7fe7d133825e6f696af244', 'ezquielgon2@gmail.com', 626425195);	
+	(32, 'ezegonmac2', 'Ezequiel', 'Macho', './images/profile_photo.png', 'pbkdf2:sha256:150000$mkyP4LPf$1dbe7d01b040aedca49310885aed1f66079b8dddca7fe7d133825e6f696af244', 'ezquielgon2@gmail.com', 626425195),
+	(33, 'ezegonmac3', 'Ezequiel23', 'Macho46', './images/profile_photo.png', 'pbkdf2:sha256:150000$mkyP4LPf$1dbe7d01b040aedca49310885aed1f66079b8dddca7fe7d133825e6f696af244', 'ezquiel4532@gmail.com', 626425195);
 
 
 INSERT INTO Photos (
@@ -270,9 +271,6 @@ VALUES
 		(27,3 ,13),
 		(28,3 ,14),
 		(29,3 ,15),
-		(30,5 ,4),
-		(31,6 ,4),
-		(32,7 ,4),
 		(33,8 ,1),
 		(34,10 ,15),
 		(35,25 ,1);
